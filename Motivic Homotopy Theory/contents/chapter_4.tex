@@ -1,0 +1,246 @@
+\chapter{Stable Motivic Homotopy Theory}
+
+As we've shown in \ref{stable}, their is a standard process to get a stable $(\infty,1)$-category from a pointed $(\infty,1)$-category. The process happens in this chapter is a little different.
+
+Instead of using the $(\infty,1)$-pushout of $0\gets X\to0$ (which concides with $X\wedge S^1$ in $\mathscr{S}_\bullet$), we use the original definition of suspension functor, which is just the smash product with ``circle".
+
+However, we have two kinds of circles in motivic homotopy category, so correspondingly there are two types of suspension functors, which naturally lead to bispectrum as well as bicohomology.
+
+The stabilization process gives rise to the stable motivic homotopy category $\mathcal{SH}(S)$. Robalo shows\cite{Robalo2015} the universal property of it, which show the reasonability of ``motivic" in its name.
+
+\section{Stabilization}
+
+This section is just a generalized version for biindexes of stabilzation process in higher algebra.
+
+\begin{remark}
+    Denote $S_t^1$ as the tate sphere, $S_s^1$ as the standard sphere.
+\end{remark}
+
+\begin{definition}
+    The s-suspension functor $\Sigma_s:\mathcal{H}(S)_\bullet \to \mathcal{H}(S)_\bullet$ is defined as the functor: $-\wedge S_s^1$, while the t-suspension functor $\Sigma_t:\mathcal{H}(S)_\bullet \to \mathcal{H}(S)_\bullet$ is defined as the functor: $-\wedge S_t^1$.
+\end{definition}
+
+\begin{definition}
+    The s-loop functor is defined as $\text{Maps}(S_s^1,-)$, while the t-loop functor is defined as $\text{Maps}(S_t^1,-)$.
+\end{definition}
+
+\begin{proposition}
+    There are two adjunctions:
+
+    $\Sigma_s: \mathcal{H}(S)_\bullet \rightleftarrows \mathcal{H}(S)_\bullet: \Omega_s$;
+
+    $\Sigma_t: \mathcal{H}(S)_\bullet \rightleftarrows \mathcal{H}(S)_\bullet: \Omega_t$.
+\end{proposition}
+
+
+\begin{definition}\label{shs}
+    The stable motivic homotopy category $\mathcal{SH}_s(S)$ (or simply denoted as $\mathcal{SH}(S)$) is defined as:
+
+$    \operatorname{colim}[\mathcal{H}(S)\bullet \xrightarrow{\Sigma_s} \mathcal{H}(S)\bullet \xrightarrow{\Sigma_s} \cdots]\in \text{Pr}^L$
+
+While the $\mathcal{SH}_t(S)$ can be defined as:
+
+$    \operatorname{colim}[\mathcal{H}(S)\bullet \xrightarrow{\Sigma_t} \mathcal{H}(S)\bullet \xrightarrow{\Sigma_t} \cdots]\in \text{Pr}^L$
+
+The object in motivic homotopy category is called ``motivic spectra".
+
+\end{definition}
+
+In duality, we can also define $    \operatorname{lim}[\mathcal{H}(S)\bullet \xleftarrow{\Omega_s} \mathcal{H}(S)\bullet \xleftarrow{\Omega_s} \cdots]\in \text{Pr}^R$, $    \operatorname{lim}[\mathcal{H}(S)\bullet \xleftarrow{\Omega_t} \mathcal{H}(S)\bullet \xleftarrow{\Omega_t} \cdots]\in \text{Pr}^R$. Since $\mathcal{H}(S)_\bullet$ is presentable, we have similar propositions like \ref{duality}.
+
+\begin{proposition}
+
+    The colimit $    \operatorname{colim}[\mathcal{H}(S)\bullet \xrightarrow{\Sigma_s} \mathcal{H}(S)\bullet \xrightarrow{\Sigma_s} \cdots]$ corresponds to the limit $\operatorname{lim}[\mathcal{H}(S)\bullet \xleftarrow{\Omega_s} \mathcal{H}(S)\bullet \xleftarrow{\Omega_s} \cdots]$ via $\text{Pr}^L\simeq (\text{Pr}^R)^{op}$;
+
+    The colimit $    \operatorname{colim}[\mathcal{H}(S)\bullet \xrightarrow{\Sigma_t} \mathcal{H}(S)\bullet \xrightarrow{\Sigma_t} \cdots]$ corresponds to the limit $\operatorname{lim}[\mathcal{H}(S)\bullet \xleftarrow{\Omega_t} \mathcal{H}(S)\bullet \xleftarrow{\Omega_t} \cdots]$ via $\text{Pr}^L\simeq (\text{Pr}^R)^{op}$.
+\end{proposition}
+
+So we will not distingush the colimit and limit and call them all as $\mathcal{SH}_s(S)$ and $\mathcal{SH}(S)$.
+
+\begin{remark}
+    $\Sigma_{*}:\mathcal{H}(S)_\bullet\to \mathcal{SH}_{*}(S)$ and $\Omega_{*}:\mathcal{H}(S)_\bullet\to \mathcal{SH}_{*}(S)$ each natrually induce functor from $\mathcal{SH}_{*}(S)$ to $\mathcal{SH}_{*}(S)$ $(*\in \{s,t\})$. With a little abuse of notation, we still denote them as $\Sigma_{*} $ and $\Omega_{*}$.
+\end{remark}
+
+
+\begin{remark}
+    
+Since the stabilization precess we've mentioned in \ref{shs} has functorality, the process can be considered as a functor from $\mathcal{H}(S)_\bullet$ to $\mathcal{SH}(S)$, which we denoted as $\Sigma_*^\infty$, $*\in\{s,t\}$.
+
+Duality, we denote the functor from $\mathcal{SH}(S)$  to $\mathcal{H}(S)_\bullet$ which maps a spectrum to its first term.
+\end{remark}
+
+\begin{remark}
+    We will denote$\Sigma_*[k]$  as $\Sigma_*^k$, $\Omega_*[k]$ as $\Omega_*^k,*\in\{s,t\}$;
+
+    We will denote $\Sigma_*^\infty\circ\Sigma_*[k]$  as $\Sigma_*^{\infty-k}$, $\Omega_*^\infty\circ\Omega_*[k]$  as $\Omega_*^{\infty-k},*\in\{s,t\}$.
+
+    It's easy to verify the commutativity of these functors, which is why we use additivity to represent its index.
+\end{remark}
+
+\begin{proposition}
+    There are two adjunctions:
+
+$    \Sigma_*^{\infty-k}: \mathcal{H}(S)\bullet \rightleftarrows \mathcal{SH}_*(S): \Omega_*^{\infty-k}$ , $*\in \{s,t\}$;
+\end{proposition}
+
+As for bigraded cases, the situation become a little more complicated.
+
+\begin{definition}
+The category $\mathcal{SH}_{s,t}(S)$ can be defined as:
+\[
+\mathop{\mathrm{lim}}\limits_{\substack{\longrightarrow \\ \Sigma_s, \Sigma_t}} 
+\left[
+\begin{tikzcd}[
+  row sep=1.5em, 
+  column sep=1.5em,
+  cells={nodes={minimum width=2em}} % 统一节点宽度
+]
+\cdots \arrow[r, "\Sigma_s"] & \cdots \arrow[r, "\Sigma_s"] & \cdots \arrow[r, "\Sigma_s"] & \cdots \\
+\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
+\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
+\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
+\cdots \arrow[u, "\Sigma_t"'] \\
+\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
+\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
+\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
+\cdots \arrow[u, "\Sigma_t"'] \\
+\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
+\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
+\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
+\cdots \arrow[u, "\Sigma_t"']
+\end{tikzcd}
+\right]\in \text{Pr}^L
+
+\]
+
+\end{definition}
+
+Similarily we can define $  \Sigma_{s,t}^{\infty,\infty}$ as the stabilization functor and $\Omega_{s,t}^{\infty,\infty}$ as taking the $(1,1)-$term of the spectrum. The definition of $\Sigma_{s,t}^{i,j}$ as well as $\Omega_{s,t}^{i,j}$ is similar.
+
+\begin{proposition}
+    $    \Sigma_{s,t}^{\infty-i,\infty-j}: \mathcal{H}(S)\bullet \rightleftarrows \mathcal{SH}_{s,t}(S): \Omega_{s,t}^{\infty-i,\infty-j}$.
+\end{proposition}
+
+\section{Motivic cohomology}
+
+In classic algebraic topology, Brown representation theorem tell us that there exists a 1-1 corresponding between cohomology theories and spectra. Naumann and Spitzweck proved\cite{Naumann2009BrownRI} that the theorem still holds in motivic world, after giving the axioms which a bigraded cohomology theory should satisfy.
+
+\begin{definition}
+    We call a sequnce of functor $(F^{p,q})_{(p,q\in \mathbb{Z}_{\geq 0}^2)}:(Sm/S)^{op}\to \mathcal{E}ns$ is a motivic cohomology if:
+
+    1. $F^{p+1,q}(S_s^1\wedge X)= F^{p,q}(X)$;
+
+    2. $F^{p,q+1}(S_t^1\wedge X)= F^{p,q}(X)$;
+
+    3. $F^{p,q}$ satisfies Nisnevich excision property and $\mathbb{A}^1-$invariant property. 
+\end{definition}
+
+\begin{theorem}
+    A motivic cohomology is represented by a motivic spectrum $E$ by $F^{p,q}(X):=[X,\Omega_{s,t}^{\infty-(p-2q),\infty-q}E]=[\Sigma_{s,t}^{\infty}X,\Omega_{s,t}^{p-2q,q}E]$, and vice versa.
+\end{theorem}
+
+We will show some classic examples of motivic spectra together with their corresponding motivic cohomology.
+
+\section{Motivic Spectra}
+
+We firstly see the motivic Eilenberg-MacLane spectrum. The construction below come from \textcite{dundas2007motivic}.
+
+\begin{definition}
+    Let $X\in Sm/S$, define $L(X):(Sm/S)^{op}\to Ab$ which maps:
+
+    $U\mapsto F(Irr(U,X))$,
+    
+    where $Irr(U,X)$ is the set of closed irreducible subscheme $Y$ of $U\times X$ such that $p_0:Y\to U$ is of finite type and $im(p_0)$ covers one of the connected compnents of $U$, $F$ is the free abelization functor.
+\end{definition}
+
+\begin{proposition}
+    The functor $U\circ L$ is a Nisnevich sheaf which satisfies $\mathbb{A}^1-$equivalent category, where $U$ is the forgetful functor. Thus $U\circ L\in \mathcal{H}(S)$.
+\end{proposition}
+
+\begin{definition}
+    The Eilenberg-MacLane spectrum $\mathbf{H}\mathbb{Z}^{p,q}:=  L\left((S_s^1)^{\wedge p} \wedge (S_t^1)^{\wedge q}\right)$.
+
+\end{definition}
+
+We don't forget its group structure here because we want to tansfer the cohomology theory.
+
+Just as in classic algebraic topology, Eilenberg-MacLane spectrum represents the ``singular cohomology", that is, the Bloch's higher Chow group.
+
+\begin{proposition}
+    $[X,\mathbf{H}\mathbb{Z}^{p,q}]= CH^q(X,2q-p)$.
+\end{proposition}
+
+The next example we're cared about is the algebaric K-theory spectrum.
+
+\begin{definition}
+    Define $\text{BGL}_n:=\operatorname{colim} (...\to\text(Gr_n(\mathbb{A}^{n+m}))\to \text(Gr_n(\mathbb{A}^{n+m+1}))\to...)$;
+
+    $\text{KGL}_n:= \mathbb{Z}\times \text{BGL}_n$.
+
+    $\text{KGL}:=\operatorname{colim}[...\to\text{KGL}_{n-1}\to \text{KGL}_n\to \text{KGL}_{n+1}\to...]$
+\end{definition}
+
+\begin{proposition}
+    There exists $\beta: \mathbb{P}^1\wedge \text{KGL}\to \text{KGL}$.
+\end{proposition}
+
+\begin{definition}
+    We call the spectrum $(\text{KGL},\text{KGL},...)$ together with $\beta$ on each degree the algebraic K-theory spectrum.
+\end{definition}
+
+\begin{proposition}
+    The algebraic K-theory spectrum represents algebraic K-theory.
+\end{proposition}
+
+\section{Universal Property}
+
+In this section, we will show that the stable motivic homotopy category $\mathcal{SH}(S)$ is indeed ``motivic",i.e. has the universal property, which is proved by Robalo in 2012\cite{Robalo2012arxiv}.
+
+\begin{definition}
+    Let $X,Y \in \mathcal{SH}(S),X \otimes Y:=\lim _n n \lim _m\left(\Sigma^{\infty}\left(X_n \wedge Y_m\right)[-(n+m)]\right)$
+\end{definition}
+
+\begin{definition}
+    Let $X,Y \in \mathcal{H}(S), map(X,Y):=([X,Y[n]],[[X,Y[n]]\to [X,\Omega Y[n+1]]\to \Omega[X,Y[n+1]]])$.
+\end{definition}
+
+\begin{proposition}
+    The $\otimes$ functor and the $map$ functor define a symmetric monoidal closed structure on $\mathcal{SH}(S)$.
+\end{proposition}
+
+Since $\mathcal{H}(S)$ is presentable, we have:
+
+\begin{proposition}
+    $\mathcal{SH}(S)$ is pointed and presentable.
+\end{proposition}
+
+\begin{proposition}
+    The composition of functor $L_{\mathbb{A}^1}\circ()_+\circ h_C$: $Sm/S \to \mathcal{SH}(S)$ is a symmetric monoidal, colimit-preserving functor.
+\end{proposition}
+
+\begin{theorem}\cite{Robalo2012arxiv}
+    Let $D^{\otimes}$ be a pointed presentable symmetric monoidal $(\infty,1)-$category, then the composition map:
+
+    $Fun^{\otimes,L}(\mathcal{SH}(S)^\otimes,D^\otimes)\to Fun^{\otimes,L}(Sm/S^\times,D^\otimes)$ 
+
+    is fully faithful and its image satisfies:
+
+    1.Nisnevich excision property;
+
+    2.$\mathbb{A}^1$-invariant; 
+
+    3.send Tate sphere to an invertible object.
+
+    
+\end{theorem}
+
+This theorem completes the original motivation for our topic, i.e. find a universal cohomology theory such that every cohomology theory passes through it.
+
+\section{Six functor fomalism}
+
+In 2007, Ayoub \cite{Ayoub2007} found that the stable motivic homotopy category $\mathcal{SH}(S)$ admits a six functor theory, which can be seen as an enhance of cohomology theory.
+
+\begin{theorem}\cite{Ayoub2007}
+    There is a six functor theory on $(Sm/S,\mathcal{SH}(S))$, where $E$ is the set of separated morphisms of finite type.
+\end{theorem}
+
