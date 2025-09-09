@@ -37,7 +37,7 @@
 \centerline{}
 
 
-\title[Directed Study on Spectral Sequences in Algebraic Topology]{Directed Study on Spectral Sequences in Algebraic Topology}
+\title[Seminar on Spectral Sequences in Algebraic Topology]{Seminar on Spectral Sequences in Algebraic Topology}
 
 \author{Xingzhi Huang}
 
@@ -46,31 +46,20 @@
 
 \section{Goals}
 
-This directed study is mainly based on the book of Allen Hatcher \cite{HatSS} focusing on the Serre spectral sequence and Adams spectral sequence, but also includes some other materials to clerify some concepts and provide some new tools to compute the Adams spectral sequence. The leading question of the study is to compute the homotopy groups of spheres.
+This seminar is mainly based on the book of Allen Hatcher \cite{HatSS} focusing on the Serre spectral sequence and Adams spectral sequence, but also includes some other materials to give some preliminaries, applications and generations.
+
+I expect the leading question of the seminar to be computing the homotopy groups of spheres, so we might focus more on that.
+
+\section{Preliminaries}
+
+We assume the participants have taken MATH 750, MATH 751 and MATH 752 so that they are familiar with cohomology theoreis and spectral sequences. We do not assume participants have prior knowedgement of the topics covered in \cite{Hat02} but not covered in MATH 751 and MATH 752 (such as Hopf Algebra, Steenrod Algebra and Postnikov towers). Hoewver, we encourge the participants to self-study these topics ahead because they are not the central focus of this seminar.
+
 \section{Outline}
+We expect each chapter to be covered in one presentation and to include the listed topics. The topics marked with $*$ are optional, which means: In principle, we would like them to be covered, but the speaker may skip them due to time constraints or a lack of interest. We also expect that at least the examples necessary for understanding the key concepts should be included in the presentation.
 
 \subsection*{\textbf{§1: Serre Spectral Sequence}}
 
-Given a fibration $F \to E \to B$ with $B$ simply connected, there is a spectral sequence with
-\[  E^2_{p,q} \cong H_p(B; H_q(F; G))\Rightarrow H_{p+q}(E; G) \]
-for any abelian group $G$. This spectral sequence is called the Serre spectral sequence.
-
-The construction of the Serre spectral sequence has naturality from the fiber sequence to the spectral sequence.
-
-We will also see several generalizations of the Serre spectral sequence, including the case when $B$ is not simply connected where we have to repleace the homology with local systems, and the case of generalized homology where we have to consider Atiyah-Hirzebruch spectral sequence.
-
-For cohomology, expect of 
-\[  E_2^{p,q} \cong H^p(B; H^q(F; G))\Rightarrow H^{p+q}(E; G) \]
-
-We will also have the multiplicative structure with it.
-
-Apply the Serre spectral sequence to the path fibration $K(\mathbb{Z}, n-1) \to P \to K(\mathbb{Z}, n)$ with coefficient $\mathbb{Q}$, we can compute the cohomology of Eilenberg-MacLane spaces: 
-
-$H^*(K(\mathbb{Z}, n); \mathbb{Q}) = \begin{cases}\Lambda_{\mathbb{Q}}[x] & n \text{ odd}\\
-\mathbb{Q}[x] & n \text{ even}\end{cases}$
-
-A direct corollary of this result lies in the homotopy groups of spheres: $\pi_i(S^n)$ is finite for $i>n$ except for $i=2n-1$ when $n$ is even.
-
+Constrcution and properties of Serre spectral sequences, \emph{$^*$Serre classes}, 
 Reference: \cite{HatSS}, \cite{May11}
 
 \subsection*{\textbf{§2: Hopf Algebra, H-Space and H-Group}}

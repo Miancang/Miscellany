@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.24)  8 SEP 2025 19:28
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.24)  9 SEP 2025 11:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**Outline
-(./Outline.tex
+**Notes
+(./Notes.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (c:/texlive/2025/texmf-dist/tex/latex/amscls/amsart.cls
@@ -462,8 +462,9 @@ File: l3backend-xetex.def 2024-05-08 L3 backend support: XeTeX
 \l__pdf_internal_box=\box67
 \g__pdf_backend_annotation_int=\count316
 \g__pdf_backend_link_int=\count317
-) (./Outline.aux)
-\openout1 = `Outline.aux'.
+)
+No file Notes.aux.
+\openout1 = `Notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
@@ -486,7 +487,7 @@ LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
- (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
@@ -494,35 +495,47 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Package hyperref Info: Link coloring ON on input line 28.
- (./Outline.out) (./Outline.out)
 \@outlinefile=\write4
-\openout4 = `Outline.out'.
+\openout4 = `Notes.out'.
 
 
 
-[1]
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
-[2]
 
-[3] (./Outline.aux)
+LaTeX Warning: Empty `thebibliography' environment on input line 56.
+
+
+
+[1] (./Notes.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `Outline.out' has not changed.
-(rerunfilecheck)             Checksum: 1C174B8766B3E54FD2FEDFFEA6394E9C;2472.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `Notes.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Notes.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  F2566DAD8025E58E775F79A492530FDA;160.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 31 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21144 strings out of 473832
- 399043 string characters out of 5733158
- 784118 words of memory out of 5000000
- 43707 multiletter control sequences out of 15000+600000
- 565621 words of font info for 73 fonts, out of 8000000 for 9000
+ 21089 strings out of 473832
+ 398439 string characters out of 5733158
+ 765182 words of memory out of 5000000
+ 43677 multiletter control sequences out of 15000+600000
+ 560936 words of font info for 50 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
- 98i,10n,101p,592b,477s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,5n,101p,590b,470s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Outline.pdf (3 pages).
+Output written on Notes.pdf (1 page).
