@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.24)  8 SEP 2025 19:28
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.7.24)  10 SEP 2025 16:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -502,27 +502,25 @@ Package hyperref Info: Link coloring ON on input line 28.
 
 [1]
 
-[2]
-
-[3] (./Outline.aux)
+[2] (./Outline.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `Outline.out' has not changed.
-(rerunfilecheck)             Checksum: 1C174B8766B3E54FD2FEDFFEA6394E9C;2472.
+(rerunfilecheck)             Checksum: F0CC9A1209C43320AD289BC54218537F;1962.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 31 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21144 strings out of 473832
- 399043 string characters out of 5733158
- 784118 words of memory out of 5000000
- 43707 multiletter control sequences out of 15000+600000
- 565621 words of font info for 73 fonts, out of 8000000 for 9000
+ 21106 strings out of 473832
+ 398407 string characters out of 5733158
+ 783663 words of memory out of 5000000
+ 43684 multiletter control sequences out of 15000+600000
+ 560952 words of font info for 52 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
- 98i,10n,101p,592b,477s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,6n,101p,592b,473s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Outline.pdf (3 pages).
+Output written on Outline.pdf (2 pages).

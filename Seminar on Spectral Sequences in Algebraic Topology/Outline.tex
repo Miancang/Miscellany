@@ -1,0 +1,162 @@
+\documentclass[12pt, reqno]{amsart}
+\usepackage{amsmath, amsthm, amscd, amsfonts, amssymb, graphicx, xcolor, tikz-cd}
+\usepackage[bookmarksnumbered, colorlinks, plainpages]{hyperref}
+
+\textheight 22.5truecm \textwidth 14.5truecm
+\setlength{\oddsidemargin}{0.35in}\setlength{\evensidemargin}{0.35in}
+
+\setlength{\topmargin}{-.5cm}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{summary}[theorem]{Summary}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{problem}[theorem]{Problem}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+
+\begin{document}
+\setcounter{page}{1}
+
+\color{darkgray}{
+\noindent 
+
+
+\centerline{}
+
+\centerline{}
+
+
+\title[Seminar on Spectral Sequences in Algebraic Topology]{Seminar on Spectral Sequences in Algebraic Topology}
+
+\author{Xingzhi Huang}
+
+
+ \maketitle
+
+\section{Preliminaries}
+
+We assume the participants have taken MATH 750, MATH 751 and MATH 752 so that they are familiar with cohomology theoreis and spectral sequences. We do not assume participants have prior knowedgement of the topics covered in \cite{Hat02} but not covered in MATH 751 and MATH 752 (such as Hopf Algebra, Steenrod Algebra and Postnikov towers). Hoewver, we encourge the participants to self-study these topics ahead because they are not the central focus of this seminar.
+
+\section{Outline}
+
+In this seminar, we mainly care about the Serre spectral sequence and the Adams spectral sequence, motivtated by the leading question of computing the homotopy groups of spheres. We will also cover some other spectral sequences if time permits.
+
+The primary reference for this seminar is \cite{McC01} and \cite{HatSS}. We suggest the participants to focus more on \cite{McC01} for theoretical parts because it is more detailed and rigorous. \cite{HatSS} is mainly for our leading question and the outline is mostly arranged according to it.
+
+We want to emphasize that the number of sessions dedicated to each section is not fixed. Speakers are free to decide how many sessions they need to cover their assigned material thoroughly. However, we encourage all speakers to strive for a balanced approach: please avoid spending excessive time on preliminary material that is not a central focus of our seminar, but also ensure the presentation is not so brief that it lacks illustrative examples necessary for a deep understanding.
+
+We would also like to emphasize that the order of topics outlined is not strictly fixed. Speakers have the flexibility to rearrange the sequence of their presentations, as long as they do not skip over necessary prerequisites. (For example, a speaker may choose to present topics about Eilenberg-Moore spectral sequence right after Section §1, as arranged in \cite{McC01})
+\subsection*{\textbf{§1: Serre Spectral Sequence}}
+
+
+Local Systems, Serre spectral sequences, Multiplicative structure, Transgressions.
+
+Reference:\cite{McC01}, \cite{HatSS}, \cite{Hat02}
+
+\subsection*{\textbf{§2: Applications of Serre Spectral Sequence}}
+
+Postnikov towers, Serre classes, Homotopy groups of spheres.
+
+Reference: \cite{Hat02}, \cite{HatSS}
+
+\subsection*{\textbf{§3: Localization of Spaces}}
+
+Localization of spaces, Hopf algebras and H-Spaces, Rational homotopy groups of spheres-I.
+
+Reference: \cite{HatSS}, \cite{Hat02}
+
+\subsection*{\textbf{§4: Cohomology of Eilenberg-Maclane Spaces}}
+
+Cohomology operations and Steenrod algebra, Cohomology of Eilenberg-Maclane spaces, Rational homotopy groups of spheres-II.
+
+Reference: \cite{MT08}, \cite{Hat02}, \cite{HatSS}
+
+\subsection*{\textbf{§5: Adams Spectral Sequence}}
+
+Stable homotopy theories, Adams spectral sequences, Multiplicative structure, Leibniz rule, Minimal resolutions.
+
+Reference: \cite{Adams}, \cite{McC01}, \cite{Koc96}, \cite{HatSS}, 
+
+\subsection*{\textbf{§6: Computations of Adams Spectral Sequence}}
+
+ Computations on stable homotopy groups of spheres, May spectral sequence, Adams-Novikov spectral sequence.
+
+Reference: \cite{HatSS},\cite{McC01} \cite{May64}, \cite{Nov67}
+
+\subsection*{\textbf{§7: Other Spectral Sequence}}
+Eilenberg-Moore spectral sequence, Bockstein spectral sequence.
+
+Reference: \cite{McC01}
+
+
+\bibliographystyle{amsplain}
+\begin{thebibliography}{99}
+
+
+\bibitem[HatSS]{HatSS}
+Hatcher, Allen.
+\emph{Spectral Sequences}.
+preprint, 2004.
+\url{https://pi.math.cornell.edu/~hatcher/AT/ATch5.pdf}
+
+\bibitem[McC01]{McC01}
+McCleary, John.
+\emph{A User's Guide to Spectral Sequences}.
+Cambridge Studies in Advanced Mathematics, No. 58,
+Cambridge University Press, 2001.
+
+\bibitem[MaxSS]{MaxSS}
+Maxim, Laurentiu.
+\emph{Lecture Notes on Spectral Sequences}.
+course notes, 2018
+\url{https://people.math.wisc.edu/~lmaxim/spseq.pdf}
+
+\bibitem[Hat02]{Hat02}
+Hatcher, Allen,
+\emph{Algebraic Topology},
+Cambridge University Press, Cambridge, 2002.
+\url{https://pi.math.cornell.edu/~hatcher/AT/AT+.pdf}
+
+\bibitem[MT08]{MT08}
+Mosher, Robert E. and Tangora, Martin C.,
+\emph{Cohomology operations and applications in homotopy theory},
+Courier Corporation, Mineola, NY, 2008.
+\url{https://webhomes.maths.ed.ac.uk/~v1ranick/papers/moshtang.pdf}
+
+\bibitem[Koc96]{Koc96}
+Kochman, Stanley O.,
+\emph{Bordism, stable homotopy and Adams spectral sequences},
+Fields Institute Monographs, vol. 7,
+American Mathematical Society, Providence, RI, 1996.
+
+\bibitem[Adams]{Adams}
+Adams, J. F.
+\emph{On the structure and applications of the Steenrod algebra}.
+Comment. Math. Helv. 32 (1958), 180--214.
+\url{https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Adams-SS.pdf}
+
+\bibitem[May64]{May64}
+May, J. Peter.
+\emph{The cohomology of restricted Lie algebras and of Hopf algebras: application to the Steenrod algebra}.
+Princeton University, 1964.
+
+\bibitem[Nov67]{Nov67}
+Novikov, S. P.
+\emph{The methods of algebraic topology from the point of view of cobordism theory, Izv. Acad. Nauk SSSR Ser. Mat. 31 (1967) 885--951.}
+Math. USSR-Izv 1 (1967): 827--913.
+
+\end{thebibliography}
+
+
+\end{document}
