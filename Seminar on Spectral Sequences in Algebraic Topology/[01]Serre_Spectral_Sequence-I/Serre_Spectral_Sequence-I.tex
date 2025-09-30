@@ -1,0 +1,265 @@
+\documentclass[12pt, reqno]{amsart}
+\usepackage{amsmath, amsthm, amscd, amsfonts, amssymb, graphicx, xcolor, tikz-cd}
+\usepackage[bookmarksnumbered, colorlinks, plainpages]{hyperref}
+
+\textheight 22.5truecm \textwidth 14.5truecm
+\setlength{\oddsidemargin}{0.35in}\setlength{\evensidemargin}{0.35in}
+
+\setlength{\topmargin}{-.5cm}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{summary}[theorem]{Summary}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{problem}[theorem]{Problem}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+
+\begin{document}
+\setcounter{page}{1}
+
+\color{darkgray}{
+\noindent 
+
+
+\centerline{}
+
+\centerline{}
+
+
+\title[Serre Spectral Sequence-I]{Serre Spectral Sequence-I}
+
+\author{Xingzhi Huang}
+
+ \maketitle
+
+\section{Review of the spectral sequence}
+
+Given a differential object $X \in(\mathcal{A}, T)_d$ with a filtration $F^\bullet X$, we can construct a spectral sequence by the following steps:
+
+Step 1. From the short exact sequence
+
+\[0 \to (F^{p+1}X, d) \to (F^p X, d) \to (gr^p X, gr^p d) \to 0\]
+
+we obtain the associated long exact sequence in cohomology (homology):
+
+\[0 \to H(F^{p+1}X, d) \to H(F^p X, d) \to H(gr^p X, gr^p d) \xrightarrow{+1} H(F^{p+1}X, d) \to \cdots\]
+
+which can be viewed as an exact couple $\mathcal{C}_1$:
+
+\[
+\begin{tikzcd}
+H (F^\bullet X, d) \arrow[rr, "{i, (0, -1)}"] & & H (F^\bullet X, d) \arrow[dl, "{j, (0, 0)}"] \\
+& H (gr^\bullet X, gr^\bullet d) \arrow[ul, "{k, (+1, +1)}"] &
+\end{tikzcd}
+\]
+
+where the bidegree $(n, p)$ encodes the shifting $n$ of the differential object and the shifting $p$ in filtration degree.
+
+Step 2. From an initial exact couple $\mathcal{C}_1$, we can generate the derived exact couples $\mathcal{C}_r$ for $r \geq 1$:
+
+\[
+\begin{tikzcd}
+D \arrow[rr, "{i, (0, -1)}"] & & D \arrow[dl, "{j, (0, 0)}"] \\
+& E \arrow[ul, "{k, (+1, +r)}"] &
+\end{tikzcd}
+\]
+
+Step 3. We can define the spectral sequence $\{E_r^{p}, d_r^{p}\}$ associated to the exact couples $\mathcal{C}_r$ as follows:
+
+\[E_r^{p} = E^{p}\]
+\[d_r^{p} = j \circ k: E_r^{p} \to E_r^{p+r}\]
+
+where $d_r^{p}$ shifts in degree $+1$ as the differential of the differential object.
+
+\begin{theorem}
+If the filtration $F^\bullet X$ is bounded and exhaustive, then the spectral sequence $\{E_r^{p}, d_r^{p}\}$ converges to $H(X)$, i.e.,
+\[E_\infty^{p} \cong gr^p H(X)\]
+\end{theorem}
+
+\begin{remark}
+    In the case when $X$ is a $\mathbb{Z}$-graded differential object with a decreasing(increasing) filtration $F^\bullet X$, we can rewrite the above construction in the bidegree form. In that case, the spectral sequence becomes a bigraded spectral sequence $\{E_r^{p, q}, d_r^{p, q}\}$ with $q$ defined by $n-p$, where $n$ is the graded degree of $X$.
+
+    In that case, $E_\infty^{p} \cong gr^p H(X)$ when $E_\infty^{p, q} \cong gr^p H^{p+q}(X)$. We will also denote it as
+
+    \[E_\infty^{p, q} \Rightarrow H^{p+q}(X)\]
+\end{remark}
+
+\textbf{Reveresed case}
+
+If we reverse the arrows of the short exact sequence in Step 1, i.e.
+
+\[0 \to (gr^p X, gr^p d) \to (F^p X, d) \to (F^{p+1}X, d) \to 0\]
+
+we will obtain another exact couple $\mathcal{C}_1'$ with all arrows reversed:
+
+\[
+\begin{tikzcd}
+H (F^\bullet X, d)\arrow[dr, "{k, (+1, +1)}"']  & & H (F^\bullet X, d) \arrow[ll, "{i, (0, -1)}"'] \\
+& H (gr^\bullet X, gr^\bullet d) \arrow[ur, "{j, (0, 0)}"] &
+\end{tikzcd}
+\]
+
+Similarly, we can generate the derived exact couples $\mathcal{C}_r'$ for $r \geq 1$, and thus generate a spectral sequence $\{E_r'^{p}, d_r'^{p}\}$ associated to the exact couples $\mathcal{C}_r'$ where $E_r'^{p} = E'^{p}$ and $d_r'^{p} = k \circ j: E_r'^{p} \to E_r'^{p+r}$.
+
+
+\section{Spectral sequence of a filtered chain complex}
+
+Given $X\in \mathrm{Top}$ with an increasing filtration $\{X^p\}_{p \geq 0}$, we can induce a filtration on the singular chain complex $C_*(X;G)$ with coefficients in an abelian group $G$:
+
+\[F_p C_*(X;G) = C_*(X^p;G)\]
+
+Notice that $H_n(C_*(X;G)) $ is exactly the singular homology group $H_n(X;G)$. If the filtration is bounded and exhaustive, we have the convergence $E_\infty^{p, q} \cong gr^p H_{p+q}(X;G)$.
+
+\begin{example}
+Suppose $X$ is a CW-complex with skeleta $\{X^n\}_{n \geq 0}$. Then we have a filtration on the singular chain complex $C_*(X;G)$ given by the structure of the skeleta:
+\[F_p C_*(X;G) = C_*(X^p;G)\]
+
+The first exact couple is given by
+\[
+\begin{tikzcd}
+H_* (X^\bullet) \arrow[rr, "{i, (0, +1)}"] & & H_* (X^\bullet) \arrow[dl, "{j, (0, 0)}"] \\
+& H_* (X^\bullet, X^{\bullet-1}) \arrow[ul, "{k, (-1, -1)}"] &
+\end{tikzcd}
+\]
+
+So the first page of the spectral sequence is given by:
+\[
+E_{1}^{p, q} =
+\begin{cases}
+H_{p}(X^p, X^{p-1};G), & q = 0 \\
+0, & q \neq 0
+\end{cases}
+\]
+
+
+Notice then $(p,0)$ term is exactly the cellular chain group $C_p^{\mathrm{Cell}}(X;G)$. Moreover, the morphism $k$ is exactly the boundary map in the long exact sequence of the pair $(X^p, X^{p-1})$, $j$ is induced by the inclusion map. So the differential $d_1 = j \circ k$ at degree $(p, q)$ is exactly the cellular differential:
+\[
+d_{1, p, q}: H_{p}(X^p, X^{p-1};G) \to H_{p-1}(X^{p-1}, X^{p-2};G)
+\]
+
+witnessing: 
+
+\[
+\begin{tikzcd}[row sep=large, column sep=large]
+& H_{p-1}(X^{p-1};G) \arrow[dr, "j"] & \\
+H_{p}(X^p, X^{p-1};G) \arrow[ur, "k"] \arrow[rr, "d_1 = j \circ k"'] & & H_{p-1}(X^{p-1}, X^{p-2};G)
+\end{tikzcd}
+\]
+
+Thus we have $E_{2}^{p, q} \cong H_p(X;G)$ when $q = 0$ and $0$ otherwise. The spectral sequence collapses at the second page, and it converges to $H_*(X;G)$.
+
+
+\end{example}
+
+\section{Local systems}
+
+Recall that in covering space theory, given a locally path-connected and semi-locally simply connected space $X$, there is an equivalence of categories:
+
+\[
+\begin{tikzcd}
+\mathbf{\operatorname{Set}}^{\Pi_1(X)}
+    \ar[r, bend left=35, "{\mathrm{Rec}}", shift left=0.6ex]
+& 
+\mathbf{LCSh}_{\operatorname{Set}}(X) 
+    \ar[l, bend left=35, "{\mathrm{Fib}}", shift left=0.6ex]
+\end{tikzcd}
+\]
+
+Here we write ${LCSh}_{\operatorname{Set}}(X)$ for the category of locally constant sheaves of sets on $X$ to represent $Cov(X)$ for generalization purpose. 
+
+\begin{theorem}
+Given $X$ a locally connected space, the equivalence holds if we replace $\mathbf{Set}$ by $\mathrm{Ab}$ or $R$-$\mathbf{Mod}$, i.e.,
+\[
+\begin{tikzcd}
+\mathbf{\operatorname{Ab}}^{\Pi_1(X)}
+    \ar[r, bend left=35, "{\mathrm{Rec}}", shift left=0.6ex]
+&
+\mathbf{LCSh}_{\operatorname{Ab}}(X) 
+    \ar[l, bend left=35, "{\mathrm{Fib}}", shift left=0.6ex]
+\end{tikzcd}
+\]
+and
+\[
+\begin{tikzcd}
+R\text{-}\mathbf{Mod}^{\Pi_1(X)}
+    \ar[r, bend left=35, "{\mathrm{Rec}}", shift left=0.6ex]
+&
+\mathbf{LCSh}_{R\text{-}\mathbf{Mod}}(X)
+    \ar[l, bend left=35, "{\mathrm{Fib}}", shift left=0.6ex]
+\end{tikzcd}
+\]
+\end{theorem}
+
+So we can define the local system of a locally connected space $X$ with coefficients $R$ in the following equivalent ways:
+
+\begin{definition}
+A \textbf{local system} of $X$ with coefficients in $R$ is either 
+
+(1) a functor $\mathcal{L}: \Pi_1(X) \to R$-$\mathbf{Mod}$; or 
+
+(2) a locally constant sheaf of $R$-modules on $X$.
+
+\end{definition}
+
+\begin{remark}
+If $X$ is path-connected, we can further define the local system as a group action of $\pi_1(X)$ on an $R$-module $M$, i.e., a representation $\rho: \pi_1(X) \to \operatorname{Aut}_R(M)$.
+\end{remark}
+
+\begin{example}
+Given a fibration $F \to E \xrightarrow{p} B$ where $B$ is locally path-connected and semi-locally simply connected, we can define a local system $\mathcal{H}_q(F;R)$ on $B$ with coefficients in $R$ as follows:
+
+For each $b\in B$, let $\mathcal{H}_q(F;R)(b) = H_q(F_b;R)$ where $F_b = p^{-1}(b)$ is the fiber over $b$. For each path class $[\gamma]: b \to b'$ in $\Pi_1(B)$, we can define the morphism $\tilde{\gamma}F_b \to F_{b'}$ induced by the homotopy lifting property of fibrations, which further induces a morphism $\mathcal{H}_q(F;R)([\gamma]): H_q(F_b;R) \to H_q(F_{b'};R)$. Notice that $F_b \simeq F$ everywhere, thus we have defined a functor $\mathcal{H}_q(F;R): \Pi_1(B) \to R$-$\mathbf{Mod}$, which is a local system on $B$ with coefficients in $R$.
+\end{example}
+
+\begin{remark}
+If $\Pi(X)$ acts trivially on the fiber homology $H_q(F;R)$, then the local system $\mathcal{H}_q(F;R)$ is constant with value $H_q(F;R)$. In particular, if $X$ is path-connected and simply connected, then every local system on $X$ is constant.
+\end{remark}
+
+
+\section{Construction of the Serre spectral sequence}
+
+Given a fibration $F \to E \xrightarrow{p} B$ where $B$ is a CW-complex, we can induce a filtration on the singular chain complex $C_*(E;R)$ with coefficients in a ring $R$:
+
+\[F_p C_*(E;R) = (C_*(p^{-1}(B^p);R)) \]
+
+where $B^p$ is the $p$-skeleton of $B$. Notice that $H_n(C_*(E;R)) $ is exactly the singular homology group $H_n(E;R)$.
+
+The first exact couple is given by
+\[
+\begin{tikzcd}
+H_* (p^{-1}(B^\bullet);R) \arrow[rr, "{i, (0, +1)}"] & & H_* (p^{-1}(B^\bullet);R) \arrow[dl, "{j, (0, 0)}"] \\
+& H_* (p^{-1}(B^\bullet), p^{-1}(B^{\bullet-1});R) \arrow[ul, "{k, (-1, -1)}"] &
+\end{tikzcd}
+\]
+
+where $k$ is induced by the boundary map in the long exact sequence of the pair $(p^{-1}(B^p), p^{-1}(B^{p-1}))$, and $j$ is induced by the inclusion map.
+
+We want to show in the next lecture that $H_{p+q}(p^{-1}(B^p), p^{-1}(B^{p-1});R) \cong \mathrm{Cell}_p(B;\mathcal{H}_q(F;R))$, while $j$ and $k$ correspond to the cellular differential. Thus the second page of the spectral sequence is given by:
+\[
+E_{2}^{p, q} \cong H_p(B;\mathcal{H}_q(F;R))
+\]
+
+
+If the filtration is bounded and exhaustive, we have the convergence $E_\infty^{p, q} \cong gr^p H_{p+q}(E;R)$ or $E_\infty^{p, q} \Rightarrow H_{p+q}(E;R)$.
+
+
+
+
+\bibliographystyle{amsplain}
+\begin{thebibliography}{99}
+
+\end{thebibliography}
+
+
+\end{document}
