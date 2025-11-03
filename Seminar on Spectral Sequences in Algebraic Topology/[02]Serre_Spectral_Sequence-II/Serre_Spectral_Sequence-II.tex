@@ -1,0 +1,70 @@
+\documentclass[12pt, reqno]{amsart}
+\usepackage{amsmath, amsthm, amscd, amsfonts, amssymb, graphicx, xcolor, tikz-cd}
+\usepackage[bookmarksnumbered, colorlinks, plainpages]{hyperref}
+
+\textheight 22.5truecm \textwidth 14.5truecm
+\setlength{\oddsidemargin}{0.35in}\setlength{\evensidemargin}{0.35in}
+
+\setlength{\topmargin}{-.5cm}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{summary}[theorem]{Summary}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{problem}[theorem]{Problem}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+
+\begin{document}
+\setcounter{page}{1}
+
+\color{darkgray}{
+\noindent 
+
+
+\centerline{}
+
+\centerline{}
+
+
+\title[Serre Spectral Sequence-II]{Serre Spectral Sequence-II}
+
+\author{Xingzhi Huang}
+
+ \maketitle
+
+\section{Construction of Serre Spectral Sequence-Proof}
+
+As we've shown, the first page of the Serre spectral sequence is given by
+\[E^1_{p, q} \cong H_{p+q}(p^{-1}(B^p), p^{-1}(B^{p-1});R).\]
+where the differential $d^1$ is the $j\circ k$, which are induced from the long exact sequence of the triple
+
+\[(p^{-1}(B^p), p^{-1}(B^{p-1}), p^{-1}(B^{p-2})).\]
+
+Another way to see the first page is to extend it to the "zero" page and view $E^1$ as the homology of $E^0$ with respect to $d^0$. Clearly, we can define $E^0_{p, q} := C_{p+q}(p^{-1}(B^p));R)$
+
+\bibliographystyle{amsplain}
+\begin{thebibliography}{99}
+\bibitem{Li2024}
+Wenwei Li.
+\emph{Methods of Algebra, Vol. 2: Linear Algebra}.
+Higher Education Press, 2024. (in Chinese)
+
+\bibitem{McCleary2001}
+McCleary, John.
+\emph{A User's Guide to Spectral Sequences}, 2nd ed.
+Cambridge University Press, 2001.
+\end{thebibliography}
+
+
+\end{document}
