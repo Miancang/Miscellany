@@ -2,31 +2,31 @@
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Foreword}{3}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}The main content of this paper}{3}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}The significance of this article}{4}{subsection.1.3}%
-\contentsline {section}{\numberline {2}Preliminaries}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Foundations of $\infty $-categories}{4}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Models of $\infty $-categories}{4}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Mapping Spaces}{5}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Functors of $\infty $-categories}{8}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Consturctions of $\infty $-categories}{9}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Fibrations of $\infty $-categories}{9}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Limits and Colimits}{11}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Adjoint functors}{11}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Presentable categories}{12}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Reflective Localization}{13}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Stable $\infty $-categories}{14}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Stabilization}{14}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}$\infty -$Operads and Monoids}{15}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Six functor theories}{15}{section.5}%
-\contentsline {section}{\numberline {6}Unstable Motivic Homotopy Theory}{16}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Nisnevich topology}{17}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Excision property}{17}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}A1-equivalent}{18}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Unstable motivic homotopy category}{19}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Tate sphere}{19}{subsection.6.5}%
-\contentsline {section}{\numberline {7}Stable Motivic Homotopy Theory}{20}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Stabilization}{20}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Motivic cohomology}{22}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Motivic Spectra}{22}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Universal Property}{23}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Six functor fomalism}{23}{subsection.7.5}%
+\contentsline {section}{\numberline {2}Language of $\infty $-categories}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Models of $\infty $-categories}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Mapping Spaces}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Functors of $\infty $-categories}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Fibrations of $\infty $-categories}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Limits and Colimits}{10}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Adjoint functors}{11}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Presentable categories}{11}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Stable categories}{12}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}$(\infty ,1)-$Operads and symmetric monoidal categories}{13}{subsection.2.9}%
+\contentsline {section}{\numberline {3}Preliminaries}{14}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Higher topos theory}{14}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Localization}{14}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Properties of presentable categories}{15}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Stable Homotopy Theory}{15}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Six functor formalism}{16}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Unstable Motivic Homotopy Theory}{17}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Nisnevich topology}{17}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Excision property}{18}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}A1-equivalent}{18}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Unstable motivic homotopy category}{19}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Tate sphere}{20}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Stable Motivic Homotopy Theory}{20}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Stabilization}{21}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Motivic cohomology}{22}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Motivic Spectra}{22}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Universal Property}{23}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Six functor fomalism}{24}{subsection.5.5}%

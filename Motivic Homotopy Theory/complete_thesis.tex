@@ -84,19 +84,17 @@
 % 超链�?
 \usepackage[hidelinks]{hyperref}
 
-% 参考文献处�?
-\usepackage[backend=bibtex,style=numeric,sorting=nyt]{biblatex}
-\addbibresource{refs.bib}
+% 参考文献处理 - 使用内置参考文献列表
 
-% 定理环境
+% 定理环境 - 共享编号系统
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{corollary}{Corollary}[section]
-\newtheorem{remark}{Remark}[section]
-\newtheorem{example}{Example}[section]
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{example}[definition]{Example}
 
 % 直立体数学符�?
 \providecommand{\dd}{\mathop{}\!\mathrm{d}}
@@ -148,43 +146,39 @@ In short, motivic homotopy theory concerns how to construct a algebraic topology
 \hline
 \textbf{Classic World} & \textbf{Motivic World} \\
 \hline
-$\mathscr{S}$ (Spaces) & $\mathcal{H}(S)$ (Motivic homotopy category) \\
+$\mathscr{S}$ (Spaces) & $\mathcal{H}(S)$ \\
 \hline
 $I$& $\mathbb{A}^1$ \\
 \hline
 $I$-homotopy equivalence & $\mathbb{A}^1$-homotopy equivalence \\
 \hline
-$S^1$& Tate sphere \\
+$S^1$& $\mathbb{P}^1$ \\
 \hline
-$\textbf{Sptr}$ (Spectra) & $\mathcal{SH}(S)$ ( Stable motivic homotopy category) \\
-\hline
-Cohomology & Motivic cohomology \\
+$\textbf{Sp}$ & $\mathcal{SH}(S)$ \\
 \hline
 \end{tabular}
 \end{table}
 
-In Chapter 2, we will firstly recommend some preliminaries that are important to understand the topic we'll discuss. It mainly contains the language of $\infty-$categories, stable $\infty-$ categories and the theory of six functors.
+In Chapter 2, we'll recommend the language of $\infty-$categories. Any reader who is already familiar with it can skip this chapter.
 
-In Chapter 3, we will consturct the unstable motivic homotopy category $\mathcal{H}(S)$ and explain the reasonability in the constuction. 
+In Chapter 3, we will firstly recommend some preliminaries that are important to understand the topic we'll discuss. It mainly contains higher topos theory, stable homotopy theory and six functor formalism.
 
-In Chapter 4, we will construct the stable motivic homotopy category $\mathcal{SH}(S)$, which is a slightly differnt from the standard stabilization process. The existence of two circles in $\mathcal{H}(S)$ give rise to bigraded cohomology theories in motivic world. We will also see those important properties(universal properties, six functor formalism) and some spectra which have essential applications in other fields.
+In Chapter 4, we will construct the unstable motivic homotopy category $\mathcal{H}(S)$ as a motivic localization of the Nisnevich presheaf category. We will also see the reasonability of such construction.
 
-\subsection{The significance of this article}
-Since motivic homotopy theory is a topic developed in mid 1990s and the language where it is based has changed with the development of $\infty-$categories, there has been a lack of a very detailed introduction of this topic in modern language. This is what this paper is in intended for.
+In Chapter 5, we will construct the stable motivic homotopy category $\mathcal{SH}(S)$, as a variant of the classic stabilization of the $\mathcal{H}(S)$. We will also see how Robalo unifies them into a general framework and proves the universal property of $\mathcal{SH}(S)$.
 
-% Chapter 2 - Preliminaries
-\section{Preliminaries}
 
-In this chapter, we will recommend the prelimiaries about $\infty-$categories, stable $\infty-$categories and six functor theories. Readers who are already familiar with them can skip this chapter and refer to \ref{chap:symbol} for notations.
+% Chapter 2 - Language of $\infty$-categories
+\section{Language of $\infty$-categories}
 
-\subsection{Foundations of $\infty$-categories}
-The motivation of $\infty$-categories is to consturct a language where we can talk about higher morphisms. A naive approach towards this is enriched category. However, the coherence data soon become too complicated to describe as the level increases. So we will construct some models to describe $\infty$-categories.
+
+The motivation of $\infty$-categories is to construct a language where we can talk about higher morphisms. A naive approach towards this is enriched category. However, the coherence data soon become too complicated to describe as the level increases. So we will construct some models to describe $\infty$-categories.
 
 It should be noted what we call $\infty$- categories here are in fact $(\infty,1)$-categories, which means all n-morphisms ($n \geq 2$) are invertible.
 
 Readers are assumed to have been familiar with the knowledge of simplicial sets and model categories.
 
-\subsubsection{Models of $\infty$-categories}
+\subsection{Models of $\infty$-categories}
 When we say a ``model" for $\infty$- categories, we mean a model category, whose objects(up to weak equivalence) are $\infty$- categories and the weak equivalence between two objects represents equivalence between two $\infty$- categories. These models are ``equivalent", namely Quillen equivalent.
 
 In short, 
@@ -218,7 +212,7 @@ A question arising here is that the ``homotopy" $h$ witnessing the composition i
     We define $\text{Cat}_{\Delta}$ as the category of $\text{Set}_{\Delta}$-enriched categories, whose morphisms are given by enriched functors. We also define $\text{Cat}_{Kan}$ as the full subcategory of $\text{Cat}_{\Delta}$ generated by those Kan complex-enriched(which we will introduce in \ref{kan-complex}) categories.
 \end{definition}
 
-We will then show two model categories which model the $\infty$-categories, or more precisely, whose fibrant full subcatgoreis model the $\infty-$categories.
+We will then show two model categories which model the $\infty$-categories, or more precisely, whose fibrant full subcatgoreis model the $(\infty,1)-$categories.
 
 \begin{theorem}[Joyal, 2008]
     There exists a model structure called Joyal model structure on $\text{Set}_\Delta$ where fibrant objects are exactly quasi-categories.
@@ -239,7 +233,7 @@ Joyal and Tierney pointed out that these two model categories are Quillen equiva
     $\text{QCat}$ and $\text{Cat}_{Kan}$ are Quillen equivalent.
 \end{corollary}
 
-\subsubsection{Mapping Spaces}\label{mapping_space}
+\subsection{Mapping Spaces}\label{mapping_space}
 
 The idea of $\infty$-categories is that for any two objects in the category, there exists a ``mapping space" between such that the ``mapping space" is an $(\infty,0)$-category (Just as the case in $\mathcal{CG}$-enriched categories). That gives rise to the concept of Kan complexes where every morphism is ``invertible".
 
@@ -262,7 +256,7 @@ We make it clear why we say ``any morphism in Kan complex is invertible" here.
     Let $C$ be a quasi-category, the expression $x\in C$ means $x$ is a 0-simplex in $C$ (We also call $x$ as a 0-morphism); the expression $f:x\to y$ means $f$ is a 1-simplex in $C$ satisfying $d_0f=x,d_1f=y$ (We also call $f$ as a 1-morphism).
 \end{remark}
 
-\begin{theorem}(\textcite{ker}, 1.4.3.6)
+\begin{theorem}(\cite{ker}, 1.4.3.6)
     Let $C$ be a quasi-category, $x,y \in C, f,g:x\to y$, The following are equivalent:
 
     \begin{enumerate}
@@ -305,7 +299,7 @@ For $f:x\to y,g:y\to z \in \textsf{h}C$, the composition $g\circ f$ is defined a
     Let $f:x\to y\in C$, we will call $f$ an isomorphism if the image $[f]$ of $f$ in $\textsf{h}C$ is an isomorphism.
 \end{remark}
 
-\begin{theorem}(\textcite{Joyal})
+\begin{theorem}(\cite{Joyal})
     A quasi-category $C$ is a Kan complex if and only if all morphisms in $C$ are isomorphisms.
 \end{theorem}
 
@@ -353,7 +347,7 @@ We will then formally give the consturction of mapping spaces.
     The balanced complex $\text{Hom}_C^B(x,y):=\{x\}\underset{\text{Fun}(\{0\},C)}{\times}\text{Fun}(\Delta^1,C))\underset{\text{Fun}(\{1\},C)}{\times}\{y\}$. 
 \end{definition}
 
-\begin{theorem}(\textcite{ker}, 4.6.5.5)\label{kan}
+\begin{theorem}(\cite{ker}, 4.6.5.5)\label{kan}
     $\text{Hom}_C^L(x,y)$, $\text{Hom}_C^R(x,y)$, and $\text{Hom}_C^B(x,y)$ are Kan complexes which are weak homotopy equivalent.
 \end{theorem}
 
@@ -379,21 +373,21 @@ At the end of this subsection, we will make it clear what we mean by ``contracti
 \] 
 \end{definition}
 
-\begin{theorem}(\textcite{ker}, 1.5.6.2)\label{composition_contractible_kan}
+\begin{theorem}(\cite{ker}, 1.5.6.2)\label{composition_contractible_kan}
     Let $C$ be a quasi-category, $x,y,z\in C,f:x\to y,g: y\to z$, then $\text{Fun}(\Delta^2,C)\underset{\text{Fun}(\Lambda_1^2,C)}{\times}\{(g,\cdot,f)\}$ is a contractible Kan complex.
     
 \end{theorem}
 
 \subsection{Functors of $\infty$-categories}
 
-Funtors between two quasi-categories are just morphisms in $\text{Set}_\Delta$. Two types of weak equivalences provide two types of ``equivalences". We'll show their meaning in the $(\infty,1)$-category of $(\infty,1)$-categories.
+Functors between two quasi-categories are just morphisms in $\text{Set}_\Delta$. Two types of weak equivalences provide two types of ``equivalences". We'll show their meaning in the $(\infty,1)$-category of $(\infty,1)$-categories.
 
 \begin{definition}
-    Let $C,D$ be two quasi-categories, we will call the morphism $F:C\to D$ in $\text{Set}_\Delta$ as the functor from $C$ to $D$.
+    Let $C,D$ be two quasi-categories, we will call the morphism $F:C\to D$ in $\text{Set}_\Delta$ a functor from $C$ to $D$.
 \end{definition}
 
 \begin{proposition}
-    $\text{Set}_\Delta$ admits a Catesian closed structure. With a little abuse of the notation, we will denote the corresponding internal hom $[X,Y]$ as $\text{Fun}(X,Y)\in \text{Set}_\Delta$. 
+    $\text{Set}_\Delta$ admits a Cartesian closed structure. With a little abuse of the notation, we will denote the corresponding internal hom $[X,Y]$ as $\text{Fun}(X,Y)\in \text{Set}_\Delta$. 
 \end{proposition}
 
 By Yoneda lemma clearly the 0-morphisms in $\text{Fun}(X,Y)$ are exactly the functors from $X$ to $Y$. We call this category the $(\infty,1)-$functor categories from $X$ to $Y$.
@@ -402,23 +396,23 @@ By Yoneda lemma clearly the 0-morphisms in $\text{Fun}(X,Y)$ are exactly the fun
     Let $X,Y,Z$ be three simplicial sets, then there exists a natural composition $\text{Fun}(X,Y)\times \text{Fun}(Y,Z)\to \text{Fun}(X,Z)$.
 \end{corollary}
 
-\begin{theorem}(\textcite{lc}, 5.4.5)
-    Let $C,D$ be two quasi-categories, $F:C\to D$ be a functor from $C$ to $D$. Then the following are equivalenct:
+\begin{theorem}(\cite{lc}, 5.4.5)
+    Let $C,D$ be two quasi-categories, $F:C\to D$ be a functor from $C$ to $D$. Then the following are equivalent:
 
     1. $F$ is a weak equivalence in $\text{Set}_\Delta^{Joyal}$;
 
-    2. For any quasi-category $D$, the induced morphism $\text{Fun}(D,E)\to \text{Fun}(C,E)$ is a weak equivalence in $\text{Set}_\Delta^{Joyal}$.
-
-    We will call this weak equivalence as ``homotopy equivalence" or ``equivalence".
+    2. For any quasi-category $E$, the induced morphism $\text{Fun}(D,E)\to \text{Fun}(C,E)$ is a weak equivalence in $\text{Set}_\Delta^{Joyal}$.
+    
+    We will call this weak equivalence a ``homotopy equivalence" or ``equivalence".
 \end{theorem}
 
-Following the philosophy in $\ref{homocat}$, this is the right ``isomorphism" in the $\infty-$cateogry of $\infty-$categories, that is, $\text{Cat}_\infty$.
+Following the philosophy in $\ref{homocat}$, this is the right ``isomorphism" in the $(\infty,1)-$category of $(\infty,1)-$categories, that is, $\text{Cat}_\infty$.
 
-\begin{lemma}(\textcite{ker}, 1.5.3.7)
+\begin{lemma}(\cite{ker}, 1.5.3.7)
     Let $X\in \text{Set}_\Delta,Y\in \text{QCat}$, then $\text{Fun}(X,Y)\in \text{QCat}$. 
 \end{lemma}
 
-\begin{lemma}(\textcite{ker}, 1.3.5.4)
+\begin{lemma}(\cite{ker}, 1.3.5.4)
     Let $X\in \text{QCat}$, then there exists a maximal Kan complex contained in $X$, which we denote as $X^\simeq$, or the core of $X$.
 \end{lemma}
 
@@ -449,10 +443,10 @@ Similarily we have:
 \end{definition}
 
 \begin{definition}
-    We define the $(\infty,1)-$category of $\infty-$groupoids as $\mathfrak{N}(\vmathbb{Kan})$, which we denote as $\text{Grpd}_\infty$ or $\mathscr{S}$.
+    We define the $(\infty,1)-$category of $(\infty,1)-$groupoids as $\mathfrak{N}(\vmathbb{Kan})$, which we denote as $\text{Grpd}_\infty$ or $\mathscr{S}$.
 \end{definition}
 
-\begin{proposition}(\textcite{lc}, 5.7.6)
+\begin{proposition}(\cite{lc}, 5.7.6)
     The homotopy category $\textsf{h}\text{Cat}_\infty$ is equivalent to the ordinary category $\textsf{h}\mathcal{QCat}$ defined as:
 
     $\text{Ob}(\textsf{h}\mathcal{QCat}):= $ all small quasi-categories;
@@ -462,16 +456,14 @@ Similarily we have:
     $[G]\circ[F]=[G\circ F]$.
 \end{proposition}
 
-\begin{theorem}(\textcite{lc}, 5.4.1)
+\begin{theorem}(\cite{lc}, 5.4.1)
     Let $C,D$ be two quasi-categories, $F:C\to D$, $F$ is a homotopy equivalence iff $[F]$ is an isomorphism in $\textsf{h}\mathcal{QCat}$.
 \end{theorem}
 
-This explains the reasonibility of ``homotopy equivalence".
-
-\section{Consturctions of $\infty$-categories}
+This explains the reasonability of ``homotopy equivalence".
 
 \subsection{Fibrations of $\infty$-categories}
-In ordinary category, we were already familiar with Grothendieck construction with respect to a kind of fibration. These things still have their correspondence in $\infty$-categories.
+In ordinary category theory, we are already familiar with the Grothendieck construction with respect to a kind of fibration. These concepts still have their correspondence in $\infty$-categories.
 
 The relationship of those kinds of fibrations can be represented by the diagram below\cite{htt}.
 \[
@@ -485,11 +477,11 @@ The relationship of those kinds of fibrations can be represented by the diagram 
 \end{tikzcd}
 \]
 
-While the Grothendieck-Lurie construction\cite{htt} give the equivalence of $(\infty,1)-$categories:
+While the Grothendieck-Lurie construction\cite{htt} gives the equivalence of $(\infty,1)-$categories:
 \[
 \begin{array}{c|c}
 
-\textbf{The $\infty-$category of Fibrations} & \textbf{The $\infty$-category of Functors} \\
+\textbf{The $(\infty,1)-$category of Fibrations} & \textbf{The $\infty$-category of Functors} \\
 
 \hline
 
@@ -534,7 +526,7 @@ In this subsection we will not illustrate everything in these two pictures. Inst
     Let $S$ be an $(\infty,1)-$category, we define the $(\infty,1)-$category $\text{LFib}_{/S}$ as the full subcategory of $\text{Cat}_\infty$ generated by those left fibrations.
 \end{definition}
 
-\begin{theorem}(\textcite{htt} 3.2.0.1)\label{3201}
+\begin{theorem}(\cite{htt} 3.2.0.1)\label{3201}
     Given an $(\infty,1)$-category $S$, there exists an equivalence of $(\infty,1)$-categories:
 
     $\text{LFib}_{/S}\rightleftarrows\text{Fun}(S,\text{Grpd}_\infty)$.
@@ -546,7 +538,7 @@ Finally we can extend the definiton of $\text{Maps}$.
     Let $C$ be an $(\infty,1)-$category, we define the $(\infty,1)-$category of twisted arrow category $\text{TwArr}(C):=\text{Hom}_{\text{Set}_\Delta}(\text{N}_\bullet((-)^{op}\star(-)),C)$.
 \end{definition}
 
-\begin{proposition}(\textcite{ker}, 8.1.1.15)
+\begin{proposition}(\cite{ker}, 8.1.1.15)
     The projection $\text{TwArr}(C)\to C^{op}\times C$ induced by $[n]^{op}\to [n]^{op}\star [n]\leftarrow [n]$ is a left fibration.
 \end{proposition}
 
@@ -597,16 +589,16 @@ where $n \geq 2, \phi|_{\{0,1\}}= f.$
     We say a limit diagram $\bar{u}:K^\triangleleft\to C$ is preserved by a functor $F:C\to C'$ if $F\circ \bar{u}:K^\triangleleft\to C'$ is a limit diagram; A colimit diagram $\bar{u}$ is preserved by $F$ if $F\circ\bar{u}$ is a colimit diagram.
 \end{definition}
 
-\begin{theorem}(\textcite{ker} 4.6.4.21)\label{02GL}
+\begin{theorem}(\cite{ker} 4.6.4.21)\label{02GL}
     Let $C,D$ be two $(\infty,1)-$categories, $F:C\to D$ be an equivalence, $u:K\to C$ be a diagram,  then the induced functor $C_{/u}\to C_{/F\circ u}$ is an equivalence.
 \end{theorem}
 
 \subsection{Adjoint functors}
 
-The definition we give here is a slightly different from Lurie's classic one, which explicitly give the equivalence.
+The definition we give here is slightly different from Lurie's classic one, which explicitly gives the equivalence.
 
 \begin{definition}
-    Let $C,D$ be two $(\infty,1)$-categories, We say a pair of functors $F:C\rightleftarrows D:G$ is an adjunction pair if there exists an equivalence $\varphi:\text{Maps}(F(-),-)\to\text{Maps}(-,G(-))$ in $\text{Fun}(C^{op}\times D,\mathscr{S})$.
+    Let $C,D$ be two $(\infty,1)$-categories. We say a pair of functors $F:C\rightleftarrows D:G$ is an adjunction pair if there exists an equivalence $\varphi:\text{Maps}(F(-),-)\to\text{Maps}(-,G(-))$ in $\text{Fun}(C^{op}\times D,\mathscr{S})$.
 
     We say that $F$ is a left adjoint functor which admits a right adjoint functor $G$, and vice versa.
 \end{definition}
@@ -617,7 +609,7 @@ The definition we give here is a slightly different from Lurie's classic one, wh
 
 \subsection{Presentable categories}
 
-Roughly speaking, we will see a series of  correspondences between filtered version and normal version (just as the case in 1-category).
+Roughly speaking, we will see a series of correspondences between the filtered version and the normal version (just as in the case of 1-categories).
 
 \begin{definition}
     Let $K$ be a simplicial set, $\kappa$ be a regular cardinal. We say $K$ is $\kappa$-small if $|S|<\kappa$, where $S$ is the set of nondegenerate simplexes in $K$.
@@ -693,76 +685,25 @@ There is an equivalent definition of presentbale categories, which may give a mo
     We also say a functor $F$ is accessible if it is $\kappa-$accessible for some regular cardinal $\kappa$.
 \end{definition}
 
-\begin{theorem}
-    An $(\infty,1)-$category $D$ is presentable iff there exsits an adjunction between $\text{PSh}(C)$ of an essentially small category $C$ and $D$:
 
-    $F:\text{PSh}(C)\to D \dashv G:D\to\text{PSh}(C)$ such that
-
-    $G$ is fully faithful and $G\circ F$ is an accessible functor.
-\end{theorem}
-
-\begin{example}
-    Let $C$ be an $(\infty,1)$-category, then $\text{PSh}(C)$ is a presentable category.
-\end{example}
-
-We will see that $\text{Sh}(C)$ is also a presentable category with respect to any site.
-
-\subsection{Reflective Localization}
+\subsection{Stable categories}
 
 \begin{definition}
-    Let $C,D$ be two $(\infty,1)$-categories, $F:C\to D$, we say that $F$ is a reflective localization functor if:
-
-    1. $F$ is a localization functor;
-
-    2. $F$ admits a fully faithful right adjoint.
-
-    We also say that $D$ is a reflective localization of $C$ if such $F$ exists.
-\end{definition}
-
-\begin{definition}
-    Let $D$ be an $(\infty,1)-$category, $C$ be the full subcategory of $D$ with the inclusion functor $i:C\hookrightarrow D$. If $i$ admits a left adjoint, then we call $C$ the reflective subcategory of $D$.
-\end{definition}
-
-\begin{proposition}
-    Let $C$ be the reflective subcategory of $D$, then the inclusion functor $i$ admits a reflective localization as the left adjoint.
-\end{proposition}
-
-\begin{proposition}
-  Let $C$ be a complete, cocomplete $(\infty,1)$-category, $D$ be the reflective localization of $C$. Then $D$ is also complete and cocomplete.
-\end{proposition}
-
-\begin{proposition}
-    Let $C$ be a presentbale $(\infty,1)$-category, $D$ be the reflective localization of $C$ via an accessible reflective localization functor $F:C\to D$. Then $D$ is also presentbale.
-\end{proposition}
-
-\begin{lemma}
-    The sheaficiation functor is an accessible reflective localization functor.
-\end{lemma}
-
-\begin{example}
-    Let $S$ be a site defeined over an $(\infty,1)$-category $C$, then the $(\infty,1)$-topos $\text{Sh}(C)$ is a presentable, cocomplete, complete category. 
-\end{example}
-
-\section{Stable $\infty$-categories}\label{stable}
- 
-\subsection{Stabilization}
-
-\begin{definition}
-    Let $C$ be an $(\infty,1)$-category, we say $C$ is a pointed category if $\exists $ zero object $0\in C$.
+    Let $C$ be an $\infty$-category. We say $C$ is a pointed category if there exists a zero object $0\in C$.
 \end{definition}
 
 \begin{theorem}
-    Let $C$ be an $(\infty,1)$-category with a terminal object $*$, then the coslice category $C_{*/}$ is a pointed category. This process induces a functor which we denote as $()_+$.
+    Let $C$ be an $\infty$-category with a terminal object $*$, then the coslice category $C_{*/}$ is a pointed category. This process induces a functor which we denote as $()_+$.
 \end{theorem}
 
 \begin{definition}
-    Let $C$ be a pointed $(\infty,1)$-category that admits finite colimits, $X,Y\in C,f: X\to Y$, then we define the cofiber $\text{cof}(f):=0 \sqcup_X Y$;
+    Let $C$ be a pointed $\infty$-category that admits finite colimits, $X,Y\in C,f: X\to Y$, then we define the cofiber $\text{cof}(f):=0 \sqcup_X Y$;
     
     If $C$ admits finite limits, we can define the fiber $\text{fib}(f):= 0\times_Y X$.
 \end{definition}
 
 \begin{definition}
-    Let $C$ be a pointed $(\infty,1)$-category, a triangle is a diagram:
+    Let $C$ be a pointed $\infty$-category, a triangle is a diagram:
 
     \[
 \begin{tikzcd}
@@ -776,7 +717,7 @@ We say the triangle is a fiber sequence if it is a pullback square, and a cofibe
 \end{definition}
 
 \begin{definition}
-    Let $C$ be a pointed $(\infty,1)$-category, we say $C$ is stable if:
+    Let $C$ be a pointed $\infty$-category, we say $C$ is stable if:
 
     1. $\forall f \in Mor(C)$, $f$ admits a fiber and a cofiber;
 
@@ -784,41 +725,17 @@ We say the triangle is a fiber sequence if it is a pullback square, and a cofibe
 \end{definition}
 
 \begin{definition}
-   Let $C$ be a pointed $(\infty,1)$-category that admits finite colimits, we can define the suspension functor $\Sigma:C\to C$ which maps
+   Let $C$ be a pointed $\infty$-category that admits finite colimits, we can define the suspension functor $\Sigma:C\to C$ which maps
 
    $X\mapsto 0\sqcup_X0$;
 
-   Let $C$ be a pointed $(\infty,1)$-category that admits finite limits, we can define the suspension functor $\Omega:C\to C$ which maps
+   Let $C$ be a pointed $\infty$-category that admits finite limits, we can define the suspension functor $\Omega:C\to C$ which maps
 
    $X\mapsto 0\times_X0$.
 \end{definition}
 
-\begin{definition}
-    $\operatorname{Pr}^{\mathrm{L}}$ is defined as the subcategory of $\text{Cat}_\infty$ whose objects are objects of $\text{Cat}_\infty$ while the morphisms are left adjoints;
-
-    In duality, $\operatorname{Pr}^{\mathrm{R}}$ is defined as the subcategory of $\text{Cat}_\infty$ whose objects are objects of $\text{Cat}_\infty$ while the morphisms are right adjoints.
-\end{definition}
-
-\begin{proposition}\label{duality}
-  Let $C$ be a pointed presentable $(\infty,1)$-category, then the $\operatorname{colim}[C \xrightarrow{\Sigma} C \xrightarrow{\Sigma} \cdots] \in \operatorname{Pr}^{\mathrm{L}}$ corresponds to $\operatorname{lim}[C \xleftarrow{\Omega} C \xleftarrow{\Omega} \cdots] \in \operatorname{Pr}^{\mathrm{R}}$ via $(\operatorname{Pr}^{\mathrm{L}})^{op}\simeq\operatorname{Pr}^{\mathrm{R}}$.
-
-  We will denote the functor from $C$ to $\operatorname{Pr}^{\mathrm{L}}$ as $\operatorname{Sptr}$.
-\end{proposition}
-
 \begin{proposition}
-    There is an adjunction pair:  $\Sigma: \mathrm{C} \rightleftarrows \mathrm{C}: \Omega$.
-\end{proposition}
-
-\begin{definition}
-    We define $\Sigma^{\infty}$ to be the functor induced pointwise by stabiliztion $C\mapsto\operatorname{colim}[C \xrightarrow{\Sigma} C \xrightarrow{\Sigma} \cdots] $, while the $\Sigma^{\infty-k}$ denotes the composition of functor $\Sigma^\infty$ with the $\Sigma^{\infty}(\Sigma)$(Considering $\Sigma^\infty$ as the functor in $\text{Cat}_\infty$, the $\Omega^{\infty-k}$ denotes taking the $(k+1)$-th term of a spectrum.
-\end{definition}
-
-\begin{proposition}
-    There is an adjunction pair:  $\Sigma^{\infty-k}: \mathrm{C} \rightleftarrows \text{Sptr}({C}): \Omega^{\infty-k}$.
-\end{proposition}
-
-\begin{proposition}
-    Let $C$ be a pointed $(\infty,1)$-category that admits finite limits and colimits, then the following are equivalent:
+    Let $C$ be a pointed $\infty$-category that admits finite limits and colimits, then the following are equivalent:
 
     1. $C$ is stable
     
@@ -827,7 +744,8 @@ We say the triangle is a fiber sequence if it is a pullback square, and a cofibe
     3. A square in $C$ is a pushout square if and only if it is a pullback square.
 \end{proposition}
 
-\subsection{$\infty-$Operads and Monoids}\label{monoidal}
+
+\subsection{$(\infty,1)-$Operads and symmetric monoidal categories}\label{monoidal}
 
 \begin{definition}
       We denote the pointed finite set category as $\text{Fin}_*$. We denote $[n]\coprod \{*\}$ as $\langle n\rangle$.
@@ -838,11 +756,11 @@ We say the triangle is a fiber sequence if it is a pullback square, and a cofibe
 \end{definition}
 
 \begin{definition}
-    An $\infty-$operad $\mathcal{O}$ is a pair $(\mathcal{O}^\otimes,p)$ where $\mathcal{O}^\otimes$ is an $(\infty,1)-$category  and $p$ is a functor $\mathcal{O}^\otimes \to \text{Fin}_*$ such that(We denote $p^{-1}(\langle n\rangle)$ as $\mathcal{O}^\otimes_{\langle n\rangle}$):
+    An $(\infty,1)-$operad $\mathcal{O}$ is a pair $(\mathcal{O}^\otimes,p)$ where $\mathcal{O}^\otimes$ is an $(\infty,1)-$category  and $p$ is a functor $\mathcal{O}^\otimes \to \text{Fin}_*$ such that(We denote $p^{-1}(\langle n\rangle)$ as $\mathcal{O}^\otimes_{\langle n\rangle}$):
 
     1. Any inert morphism $f: \langle m\rangle \to \langle n\rangle $ can be lifted to a $p$-coCartesian morphism $\tilde{f}$. In particular, the lifting induces the $(\infty,1)-$functor $f_!:\mathcal{O}^\otimes_{\langle m \rangle}\to \mathcal{O}^\otimes_{\langle n \rangle}$;
 
-    2. The $(\infty,1)$-functor $\text{Maps}_f^\otimes(C_1,C_2)\to \prod_{1\leq i \leq n} \text{Maps}_{\rho^i\circ f}(C_1,C_3^i)$ induced by morphism $f: \langle m\rangle \to \langle n\rangle $ is an equivalence, where $\rho^i:\langle n \rangle \to \langle 1\rangle$ denotes the morphism which maps everthing but $i$ to $*$;
+    2. The $\infty$-functor $\text{Maps}_f^\otimes(C_1,C_2)\to \prod_{1\leq i \leq n} \text{Maps}_{\rho^i\circ f}(C_1,C_3^i)$ induced by morphism $f: \langle m\rangle \to \langle n\rangle $ is an equivalence, where $\rho^i:\langle n \rangle \to \langle 1\rangle$ denotes the morphism which maps everthing but $i$ to $*$;
 
     3.For any $C_1,C_2,..., C_n\in \mathcal{O}^\otimes_{\langle 1 \rangle}$, there exists $C \in \mathcal{O}^\otimes_{\langle n \rangle}$ such that there exists a collection of the $p-$CoCartesian lifting from $C$ to $C_i$ of $\rho^i$.
 \end{definition}
@@ -852,7 +770,7 @@ We say the triangle is a fiber sequence if it is a pullback square, and a cofibe
 \end{remark}
 
 \begin{example}
-    $(\text{Fin}_*,\textsf{Id})$ iteself is an $\infty-$operad. We denote it as $\text{Comm}^\otimes$ or $\mathbb{E}_\infty$.
+    $(\text{Fin}_*,\textsf{Id})$ iteself is an $(\infty,1)-$operad. We denote it as $\text{Comm}^\otimes$ or $\mathbb{E}_\infty$.
 \end{example}
 
 \begin{example}
@@ -862,18 +780,122 @@ We say the triangle is a fiber sequence if it is a pullback square, and a cofibe
 \end{example}
 
 \begin{definition}
-    Let $(\mathcal{O}^\otimes,p)$ be an $\infty-$operad, we call a pair $(C^\otimes,p')$ where $C^\otimes$ is an $(\infty,1)-$category and $p'$ is a coCartesian fibration is an $\mathcal{O}-$monoidal $\infty-$category if the composite $p'\circ p$ exhibits $C^\otimes$ as an $\infty$-operad.
+    Let $(\mathcal{O}^\otimes,p)$ be an $(\infty,1)-$operad, we call a pair $(C^\otimes,p')$ where $C^\otimes$ is an $(\infty,1)-$category and $p'$ is a coCartesian fibration is an $\mathcal{O}-$monoidal $(\infty,1)-$category if the composite $p'\circ p$ exhibits $C^\otimes$ as an $\infty$-operad.
 \end{definition}
 
 \begin{remark}
     We will call the $\text{Comm}^\otimes$-monoidal categories as symmetric monoidal categories; We will call the $\text{Assoc}^\otimes-$monoidal categories as monoidal categories.
 \end{remark}
 
-\section{Six functor theories}
+\section{Preliminaries}
 
-Six funtor theories, or six operations is a formalization of some normal operations in algebraic topology. It was Grothendieck who first introduced the theory, to explain $\acute{e}tale$ cohomology.
+\subsection{Higher topos theory}
 
-The contents of this section come from \textcite{ScholzeSF} and \textcite{HeyerMann2024}.
+\subsubsection{Localization}
+In algebraic geometry, it is common to consider sheafification with respect to a Grothendieck topology. This process can be put in a more general framework called localization. It gives a characterzation of presentable categories.
+
+\begin{definition}(\cite{htt} 5.2.7.2)
+    Let $C,D$ be two $\infty-$categories, $F:C\to D$ be a functor. We say $F$ exhibits $D$ as a localization of $C$ if $F$ admits a fully faithful right adjoint $G:D\to C$.
+\end{definition}
+
+\begin{definition}
+    Let $C \subset D$ be two $\infty-$categories, we say a localization functor $L:D\to C$ is accessible if the composite functor $D \xrightarrow{L} C \hookrightarrow D$ is an accessible functor.
+\end{definition}
+
+Warning: A localization functor is always accessible, so the definition won't cause confusion.
+
+Then we have the following characterization of presentable categories.
+
+\begin{theorem}(\cite{htt} 5.5.1.1)
+    Let $C$ be an $\infty-$category, the following are equivalent:
+
+    1. $C$ is presentable;
+
+    2. There exists a small $\infty-$category $D$ such that $C$ is an accessible localization of $\text{PSh}(D)$.
+\end{theorem}
+
+These immediately give us an important observation in algebraic geometry.
+
+\begin{example}
+Let $(C,\tau)$ be a small Grothendieck site, then the sheafification functor $\text{PSh}(C)\to \text{Shv}(C,\tau)$ exhibits $\text{Shv}(C,\tau)$ as an accessible localization of $\text{PSh}(C)$. Thus $\text{Shv}(C,\tau)$ is presentable.
+\end{example}
+
+\subsubsection{Properties of presentable categories}
+
+Presentable categories are very useful in practice, we could firstly show some important properties of presentable categories here.
+
+\begin{theorem}
+    Let $C$ be a presentable $\infty-$category, then $C$ admits all small limits.
+\end{theorem}
+
+\begin{corollary}
+    $\text{PSh}(C)$ and $\text{Shv}(C,\tau)$ are complete and cocomplete.
+\end{corollary}
+
+\begin{theorem}[Adjoint functor theorem](\cite{htt} 5.5.2.9)
+    Let $C,D$ be two presentable $\infty-$categories, $F:C\to D$ be a functor. Then:
+
+    1. $F$ is a left adjoint if and only if it preserves all small colimits;
+
+    2. $F$ is a right adjoint if and only if it is accessible and preserves all small limits.
+\end{theorem}
+
+Thus we can consider a category which has really good properties (especially in stable homotopy theory) $\operatorname{Pr}^L$.
+
+\begin{definition}(\cite{htt} 5.5.3.1)
+    We define $\operatorname{Pr}^L$ (resp. $\operatorname{Pr}^R$) as the subcategory of $\text{Cat}_\infty$ whose objects are presentable $\infty-$categories while the morphisms are left (resp. right) adjoint functors. For $\operatorname{Pr}^L$, that's exactly the functors which preserve all small colimits.
+\end{definition}
+ 
+\subsection{Stable Homotopy Theory}
+
+To stabilize an $\infty-$category, we can formally invert the suspension functor. If we view the suspension as the smash product with $S^1$, then we can view the stabilization as a "localization" with respect to $S^1$. This philosophy is generated by Robalo to explain the universal property of the stable motivic homotopy category.
+
+\begin{definition}
+    Let $C$ be a pointed $\infty-$category which admits finite colimits, we define the stabilization $\operatorname{Sp}(C)$ of $C$ as the limit of the tower:
+    \[\cdots \xrightarrow{\Omega} C \xrightarrow{\Omega} C \xrightarrow{\Omega} C.\]
+
+    We will denote the stabilization functor from $C$ to $\operatorname{Sp}(C)$ as $\Sigma^\infty:C\to \operatorname{Sp}(C)$.
+\end{definition}
+
+Here the limit is taken in $\hat{\text{Cat}}_\infty$. However, if $C$ is a presentable category, we can take the limit in $\operatorname{Pr}^R$. Furthermore, we have duality in $\operatorname{Pr}^L$ and $\operatorname{Pr}^R$.
+
+\begin{theorem}
+    Let $C$ be a presentable pointed $\infty-$category which admits finite colimits, then the following are equivalent:
+
+    1. The limit of the tower in $\operatorname{Pr}^R$: $\cdots \xrightarrow{\Omega} C \xrightarrow{\Omega} C \xrightarrow{\Omega} C.$
+
+    2. The colimit of the tower in $\operatorname{Pr}^L$:
+    $C \xrightarrow{\Sigma} C \xrightarrow{\Sigma} C \xrightarrow{\Sigma} \cdots.$
+
+    3. $\operatorname{Sp}(C)$.
+\end{theorem}
+
+If $C$ is $\mathscr{S}_*$, then $\operatorname{Sp}(C)$ is exactly the classic stable homotopy category $\operatorname{Sp}$. Notice that $\mathscr{S}_*$ itself has a symmetric monoidal structure induced by the smash product $\wedge$, then the universal property of $\operatorname{Sp}$ can be stated as follows:
+
+\begin{definition}
+    We denote $\operatorname{Pr}^{\otimes,L}$ as the subcategory of $\operatorname{Pr}^L$ whose objects are presentably symmetric monoidal $\infty-$categories while the morphisms are symmetric monoidal left adjoint functors.
+\end{definition}
+
+\begin{theorem}[Hovey]
+    For every $\mathcal{C}^{\otimes} \in \operatorname{Pr}^{\otimes,L}$ and morphism $F: \mathcal{S}_*^{\wedge} \rightarrow \mathcal{C}^{\otimes}$ in $\operatorname{Pr}^{\otimes,L}$ for which the object $F(S^1)$ is invertible (admits an inverse with respect to $\otimes$), there exists an essentially unique morphism $\hat{F}: \operatorname{Sp}^{\otimes} \rightarrow \mathcal{C}^{\otimes}$ in $\operatorname{Pr}^{\otimes,L}$ such that the following diagram commutes:
+
+    \[
+    \begin{tikzcd}
+    \mathcal{S}_*^{\wedge} \arrow[r, "F"] \arrow[d, "\Sigma^{\infty}"'] & \mathcal{C}^{\otimes} \\
+    \operatorname{Sp}^{\otimes} \arrow[ur, "\hat{F}"', dashed] &
+    \end{tikzcd}
+    \]
+
+    That is, $F \simeq \hat{F} \circ \Sigma^{\infty}$.
+\end{theorem}
+
+
+
+\subsection{Six functor formalism}
+
+Six functor theories, or six operations, are a formalization of some normal operations in algebraic topology. It was Grothendieck who first introduced the theory to explain $\acute{e}tale$ cohomology.
+
+The contents of this section come from \cite{ScholzeSF} and \cite{HeyerMann2024}.
 
 \begin{definition}(Naive)
     A six functor theory contains the following data:
@@ -942,7 +964,7 @@ In Voevodsiky's original work, he used the simplicial sheaves to capture the hig
 
 In this chapter, we will give the definition of motivic homotopy category $\mathcal{H}(S)$ related to a Noethrian scheme $S$, which plays the role of ``spaces" where algebraic topology works. With this intuition, we'll soon see the reasonability of its definition.
 
-In short, the motivc homotopy category $\mathcal{H}(S)$ is just the homotopy localization at $\mathbb{A}^1$ of the $(\infty,1)$ presheaves over the Nisnevich site $Sm/S$, or equivalently, the homotopy localization at $\mathbb{A}^1$ of the $(\infty,1)$ presheaves over the Nisnevich site $Sm/S$ which satisfies excision property.
+In short, the motivc homotopy category $\mathcal{H}(S)$ is just the homotopy localization at $\mathbb{A}^1$ of the $\infty$ presheaves over the Nisnevich site $Sm/S$, or equivalently, the homotopy localization at $\mathbb{A}^1$ of the $\infty$ presheaves over the Nisnevich site $Sm/S$ which satisfies excision property.
 
 In the motivic homotopy category $\mathcal{H}(S)$, there are two trivial examples: the yoneda embedding from $Sm/S$ and the constant sheaf from $\mathscr{S}$. These two ``embedding" provide two kinds of spheres, i.e. the tate sphere and the standard sphere, thus inducing two types of stabilization in stable motivic homotopy theory.
 
@@ -950,7 +972,7 @@ In the motivic homotopy category $\mathcal{H}(S)$, there are two trivial example
 
 In algebraic geometry, we were very familiar with two types of topology, i.e., the Zariski topology and the $\acute{e}$tale topology. However, the Zariksi topology is too coarse while the $\acute{e}$tale topology is too fine for algebtraic topology theories to work.
 
-To be concrete, we can see the following two examples from \textcite{Hlavinka2022}.
+To be concrete, we can see the following two examples from \cite{Hlavinka2022}.
 
 \begin{example}
     Let $X\in Sm/\mathbb{C}$ with Zariski topology, $\mathcal{F}$ is a constant sheaf, then $\dim H^1(X(\mathbb{C}),\mathcal{F})= b_1(X\mathbb(\mathbb{C}))$ while $H^1(X,\mathcal{F})=0$, where $b_1$ denotes the first betti number.
@@ -986,7 +1008,7 @@ The so called ``excison property" can be understood in two intuitive ways, which
 
 \begin{definition}
 
-Let $\mathcal{F}$ be a $(\infty,1)$-presheaf on the Nisnevich site $Sm/S$. We say $\mathcal{F}$ has the excision property if:
+Let $\mathcal{F}$ be a $\infty$-presheaf on the Nisnevich site $Sm/S$. We say $\mathcal{F}$ has the excision property if:
 
 1.$\mathcal{F}(\emptyset)$ is contractible, i.e., isomorphic to the terminal object $*\in \mathscr{S}$ .
 
@@ -1016,13 +1038,13 @@ As we've mentioned, the affine line $\mathbb{A}^1$ should play the role as $I$ i
 \end{remark}
 
 \begin{definition}
-Let $\mathcal{F}$ be a $(\infty,1)$-presheaf on the Nisnevich site $Sm/S$. We say $\mathcal{F}$ is $\mathbb{A}^1-$equivalent if $\forall X\in Sm/S$, $\mathcal{F}(X)\to \mathcal{F}(X\times \mathbb{A}^1)$ is an isomorphism.
+Let $\mathcal{F}$ be a $\infty$-presheaf on the Nisnevich site $Sm/S$. We say $\mathcal{F}$ is $\mathbb{A}^1-$equivalent if $\forall X\in Sm/S$, $\mathcal{F}(X)\to \mathcal{F}(X\times \mathbb{A}^1)$ is an isomorphism.
 \end{definition}
 
 The following theorem provides a functor called ``$\mathbb{A}^1$-localization functor", which make it possible to construct a map from $Sm/S$ to its motivic category.
 
 \begin{theorem}\cite{morel2012a1} \label{localization}
-    Let $\text{Sh}(Sm/S)$ be the category of $(\infty,1)$-sheaves on the Nisnevich site $Sm/S$, $\text{Sh}(Sm/S)_{\mathbb{A}^1}$ be the subcategory of $\text{Sh}(Sm/S)$ which satisfies $\mathbb{A}^1$-equivalent property, then the forgetful functor $U:\text{Sh}(Sm/S)_{\mathbb{A}^1}\to \text{Sh}(Sm/S)$ admits a right functor, which we denote as $L_{\mathbb{A}^1}$.
+    Let $\text{Sh}(Sm/S)$ be the category of $\infty$-sheaves on the Nisnevich site $Sm/S$, $\text{Sh}(Sm/S)_{\mathbb{A}^1}$ be the subcategory of $\text{Sh}(Sm/S)$ which satisfies $\mathbb{A}^1$-equivalent property, then the forgetful functor $U:\text{Sh}(Sm/S)_{\mathbb{A}^1}\to \text{Sh}(Sm/S)$ admits a right functor, which we denote as $L_{\mathbb{A}^1}$.
 \end{theorem}
 
 \begin{corollary}
@@ -1065,7 +1087,7 @@ After illustrating the reasonability of Nisnevich topology, excison property, $\
 We use presheaves of $Sm/S$ instead of $Sm/S$ because we expect the motivic homotopy category to be complete cocomplete and presentable, as $\mathscr{S}$. It is known that yoneda embedding is exactly the ``free cocompletion" and the presheave category is complete and presentable. (This idea also motivates the definition of algebraic spaces) After sheafification and $\mathbb{A}^1-$localization, this is still true because:
 
 \begin{lemma}
-    For any $(\infty,1)$-category $C$, its sheaf category $\text{Sh}(C)$ is a reflective subcategory of $\text{Psh}(C)$, with sheafification functor the reflective localization functor.
+    For any $\infty$-category $C$, its sheaf category $\text{Sh}(C)$ is a reflective subcategory of $\text{Psh}(C)$, with sheafification functor the reflective localization functor.
 \end{lemma}
 
 Since the reflective localization functor is stable under composition, we have:
@@ -1117,9 +1139,9 @@ As in classic algebraic topology, the ``sphere" induces the infinite loop functo
 % Chapter 4 - Stable Motivic Homotopy Theory
 \section{Stable Motivic Homotopy Theory}
 
-As we've shown in \ref{stable}, their is a standard process to get a stable $(\infty,1)$-category from a pointed $(\infty,1)$-category. The process happens in this chapter is a little different.
+As we've shown in \ref{stable}, their is a standard process to get a stable $\infty$-category from a pointed $\infty$-category. The process happens in this chapter is a little different.
 
-Instead of using the $(\infty,1)$-pushout of $0\gets X\to0$ (which concides with $X\wedge S^1$ in $\mathscr{S}_\bullet$), we use the original definition of suspension functor, which is just the smash product with ``circle".
+Instead of using the $\infty$-pushout of $0\gets X\to0$ (which concides with $X\wedge S^1$ in $\mathscr{S}_\bullet$), we use the original definition of suspension functor, which is just the smash product with ``circle".
 
 However, we have two kinds of circles in motivic homotopy category, so correspondingly there are two types of suspension functors, which naturally lead to bispectrum as well as bicohomology.
 
@@ -1256,7 +1278,7 @@ We will show some classic examples of motivic spectra together with their corres
 
 \subsection{Motivic Spectra}
 
-We firstly see the motivic Eilenberg-MacLane spectrum. The construction below come from \textcite{dundas2007motivic}.
+We firstly see the motivic Eilenberg-MacLane spectrum. The construction below come from \cite{dundas2007motivic}.
 
 \begin{definition}
     Let $X\in Sm/S$, define $L(X):(Sm/S)^{op}\to Ab$ which maps:
@@ -1357,7 +1379,94 @@ In 2007, Ayoub \cite{Ayoub2007} found that the stable motivic homotopy category 
     There is a six functor theory on $(Sm/S,\mathcal{SH}(S))$, where $E$ is the set of separated morphisms of finite type.
 \end{theorem}
 
-\printbibliography
+\begin{thebibliography}{99}
+
+\bibitem{htt}
+Jacob Lurie.
+\textit{Higher Topos Theory}.
+Princeton University Press, Princeton, NJ, 2009.
+
+\bibitem{ker}
+Jacob Lurie.
+Kerodon: An Online Resource for Higher Category Theory.
+\url{https://kerodon.net}, 2023.
+
+\bibitem{Joyal}
+André Joyal.
+Quasi-categories and Kan complexes.
+\textit{Journal of Pure and Applied Algebra}, 175(1-3):207--222, 2002.
+
+\bibitem{lc}
+Chen Lin.
+Infinite Category Theory.
+\url{https://windshower.github.io/linchen/teaching/f2024.html}, 2024.
+
+\bibitem{ha}
+Jacob Lurie.
+Higher Algebra.
+\url{https://people.math.harvard.edu/~lurie/papers/HA.pdf}, 2017.
+
+\bibitem{ScholzeSF}
+Peter Scholze.
+Six-Functor Formalisms.
+\url{https://people.mpim-bonn.mpg.de/scholze/SixFunctors.pdf}, 2023.
+
+\bibitem{HeyerMann2024}
+Christian Heyer and Lucas Mann.
+6-Functor Formalisms and Smooth Representations.
+\textit{arXiv preprint}, 2024.
+
+\bibitem{Voevodsky1998}
+Vladimir Voevodsky.
+$\mathbb{A}^1$-homotopy theory.
+In \textit{Proceedings of the international congress of mathematicians}, volume 1, pages 579--604, 1998.
+
+\bibitem{Hlavinka2022}
+Joseph Hlavinka.
+Motivic Homotopy Theory and Cellular Schemes.
+2022.
+
+\bibitem{Nisnevich1989}
+Yevsey A. Nisnevich.
+The completely decomposed topology on schemes and associated descent spectral sequences in algebraic K-theory.
+In \textit{Algebraic K-theory: connections with geometry and topology}, NATO Advanced Science Institutes Series C: Mathematical and Physical Sciences, volume 279, pages 241--342. Kluwer Academic Publishers Group, Dordrecht, 1989.
+
+\bibitem{MorelVoevodsky1999}
+Fabien Morel and Vladimir Voevodsky.
+$\mathbb{A}^1$-homotopy theory of schemes.
+\textit{Publications Mathématiques de l'IHÉS}, 90:45--143, 1999.
+
+\bibitem{morel2012a1}
+Fabien Morel.
+$\mathbb{A}^1$-Algebraic Topology over a Field.
+Lecture Notes in Mathematics, volume 2052. Springer, Berlin, Heidelberg, 2012.
+
+\bibitem{Naumann2009BrownRI}
+N. Axel Naumann and Markus Spitzweck.
+Brown representability in $\mathbb{A}^1$-homotopy theory.
+\textit{arXiv: Algebraic Geometry}, 2009.
+
+\bibitem{dundas2007motivic}
+Bjørn Ian Dundas, Marc Levine, Paul Arne Østvær, Oliver Röndigs, and Vladimir Voevodsky.
+\textit{Motivic Homotopy Theory: Lectures at a Summer School in Nordfjordeid, Norway, August 2002}.
+Universitext. Springer-Verlag, Berlin, Heidelberg, 2007.
+
+\bibitem{Robalo2015}
+Marco Robalo.
+K-theory and the bridge from motives to noncommutative motives.
+\textit{Advances in Mathematics}, 269:399--550, 2015.
+
+\bibitem{Robalo2012arxiv}
+Marco Robalo.
+Noncommutative motives I: A universal characterization of the motivic stable homotopy theory of schemes.
+\textit{arXiv e-prints}, 2012.
+
+\bibitem{Ayoub2007}
+Joseph Ayoub.
+\textit{Les six opérations de Grothendieck et le formalisme des cycles évanescents dans le monde motivique (I)}.
+Astérisque, volume 314. Société Mathématique de France, 2007. 476 pages.
+
+\end{thebibliography}
 
 \end{document}
 
