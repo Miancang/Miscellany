@@ -24,7 +24,7 @@
 \contentsline {section}{\numberline {4}Unstable Motivic Homotopy Theory}{18}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Nisnevich topology}{19}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Excision property}{19}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}A1-equivalent}{20}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}$\mathbb {A}^1$-equivalent}{20}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Unstable motivic homotopy category}{20}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Tate sphere}{21}{subsection.4.5}%
 \contentsline {section}{\numberline {5}Stable Motivic Homotopy Theory}{21}{section.5}%
