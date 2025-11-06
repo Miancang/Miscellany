@@ -26,10 +26,10 @@
 \contentsline {subsection}{\numberline {4.2}Excision property}{19}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}$\mathbb {A}^1$-equivalent}{20}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Unstable motivic homotopy category}{21}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Closed symmetric monoidal structure on $\mathcal {H}(S)_\bullet $}{22}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.5}Symmetric monoidal structure on $\mathcal {H}(S)_\bullet $}{22}{subsection.4.5}%
 \contentsline {section}{\numberline {5}Stable Motivic Homotopy Theory}{22}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Robalo's Stabilization}{22}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Stable motivic homotopy category}{22}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Motivic cohomology}{23}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.2}Stable motivic homotopy category}{23}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Motivic cohomology}{24}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Motivic Spectra}{24}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Six functor fomalism}{24}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.5}Six functor fomalism}{25}{subsection.5.5}%

@@ -1188,7 +1188,27 @@ Actually, here are several equivalent definitions of the tate sphere, as shown i
     All of these give equivalent definitions of the tate sphere $S_t^1$.
 \end{proposition}
 
-\subsection{Closed symmetric monoidal structure on $\mathcal{H}(S)_\bullet$}
+\subsection{Symmetric monoidal structure on $\mathcal{H}(S)_\bullet$}
+
+
+
+\begin{theorem}
+    The unstable motivic homotopy category $\mathcal{H}(S)_\bullet$ admits a symmetric monoidal structure, where the monoidal product is given by the smash product $\wedge$.
+\end{theorem}
+
+\begin{proof}[Sketch of proof]
+    The construction follows from the general principle that if we have a presentable symmetric monoidal $\infty$-category $\mathcal{M}$ and a set of morphisms $S$ that is closed under the monoidal product, then the localization $\mathcal{M}[S^{-1}]$ inherits a symmetric monoidal structure.
+    
+    In our case, we start with $\text{PSh}(Sm/S)_\bullet$ which has a symmetric monoidal structure given by the smash product. The localization set $S$ (consisting of $\mathbb{A}^1$-homotopy equivalences and Nisnevich descent morphisms) is closed under the smash product operation.
+    
+    More precisely, if $(s,t) \in S \times S$, then the composition of the localization functor $L_{\text{mot}}: \text{PSh}(Sm/S)_\bullet \to \mathcal{H}(S)_\bullet$ with the smash product sends the pair $(s,t)$ to an equivalence in $\mathcal{H}(S)_\bullet$. Therefore, the composition $L_{\text{mot}} \circ \wedge$ factors through $L_{\text{mot}} \times L_{\text{mot}}$, defining the desired monoidal product on $\mathcal{H}(S)_\bullet$.
+\end{proof}
+
+\begin{remark}
+    The unit object for this symmetric monoidal structure is $S^0$, the sphere spectrum in $\mathcal{H}(S)_\bullet$. The smash product satisfies the usual properties: associativity, commutativity, and unitality up to coherent equivalences.
+\end{remark}
+
+This symmetric monoidal structure is crucial for the stabilization process that leads to the stable motivic homotopy category $\mathcal{SH}(S)$.
 
 
 
@@ -1199,22 +1219,20 @@ As we've shown in, their is a standard process to get a stable $\infty$-category
 
 \subsection{Robalo's Stabilization}
 
-The classic stabilization process depend ont the suspension functor defined by $\infty$-pushout against the base point. In $\operatorname{Sp}$, that corresponds to the smash product with $S^1$. The generalization we make here is to replace $S^1$ by an arbitrary object $X$ in a closed presentable symmetric monoidal pointed $\infty$-category. By the closed structure, we can define the loop functor in duality.
+The classic stabilization process depend ont the suspension functor defined by $\infty$-pushout against the base point. In $\operatorname{Sp}$, that corresponds to the smash product with $S^1$. The generalization we make here is to replace $S^1$ by an arbitrary object $X$ in a presentable symmetric monoidal pointed $\infty$-category. 
 
 \begin{definition}
-    Let $\mathcal{C}^\otimes$ be a closed presentable symmetric monoidal pointed $\infty$-category, $X\in \mathcal{C}$ be an object. The suspension functor $\Sigma_X:\mathcal{C} \to \mathcal{C}$ is defined as the functor: $-\otimes X$, while the loop functor $\Omega_X:\mathcal{C} \to \mathcal{C}$ is defined as the functor: $\mathcal{H}om(X,-)$.
-\end{definition}
+    Let $\mathcal{C}^\otimes$ be a presentable symmetric monoidal pointed $\infty$-category, $X\in \mathcal{C}$ be an object. The stable $\infty$-category $\mathcal{C}[X^{-1}]$ is defined as:
 
-\begin{definition}
-    Let $\mathcal{C}^\otimes$ be a closed presentable symmetric monoidal pointed $\infty$-category, $X\in \mathcal{C}$ be an object. The stable $\infty$-category $\mathcal{C}[X^{-1}]$ is defined as:
+    $ \operatorname{colim}(\mathcal{C} \xrightarrow{X\otimes -} \mathcal{C} \xrightarrow{X\otimes -} \mathcal{C} \xrightarrow{X\otimes -} \cdots) \in \operatorname{Pr}^L.$
 
-    $ \operatorname{lim}[\mathcal{C} \xleftarrow{\Omega_X} \mathcal{C} \xleftarrow{\Omega_X} \cdots] $
+    We will denote the stabilization functor from $\mathcal{C}$ to $\mathcal{C}[X^{-1}]$ as $\Sigma^{\infty}_X:\mathcal{C}\to \mathcal{C}[X^{-1}]$.
 \end{definition}
 
 We also have the universal property of such stabilization.
 
 \begin{theorem}[Robalo]\label{thm:robalo's stabilization}
-    Let $\mathcal{C}^\otimes$ be a closed presentable symmetric monoidal pointed $\infty$-category, $X\in \mathcal{C}$ be an object. For every $\mathcal{D}^\otimes \in \operatorname{Pr}^{\otimes,L}_{\text{St}}$ and morphism $F: \mathcal{C}^{\otimes} \rightarrow \mathcal{D}^{\otimes}$ in $\operatorname{Pr}^{\otimes,L}$ for which the object $F(X)$ is invertible (admits an inverse with respect to $\otimes$), there exists an essentially unique morphism $\hat{F}: \mathcal{C}[X^{-1}]^{\otimes} \rightarrow \mathcal{D}^{\otimes}$ in $\operatorname{Pr}^{\otimes,L}$ such that the following diagram commutes:
+    Let $\mathcal{C}^\otimes$ be a presentable symmetric monoidal pointed $\infty$-category, $X\in \mathcal{C}$ be an object. For every $\mathcal{D}^\otimes \in \operatorname{Pr}^{\otimes,L}_{\text{St}}$ and morphism $F: \mathcal{C}^{\otimes} \rightarrow \mathcal{D}^{\otimes}$ in $\operatorname{Pr}^{\otimes,L}$ for which the object $F(X)$ is invertible (admits an inverse with respect to $\otimes$), there exists an essentially unique morphism $\hat{F}: \mathcal{C}[X^{-1}]^{\otimes} \rightarrow \mathcal{D}^{\otimes}$ in $\operatorname{Pr}^{\otimes,L}$ such that the following diagram commutes:
 
     \[
     \begin{tikzcd}
