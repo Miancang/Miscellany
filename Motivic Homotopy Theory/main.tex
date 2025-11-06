@@ -843,7 +843,7 @@ In this subsection we will introduce a special case of localization, which is ca
 \end{definition}
 
 \begin{theorem}(\cite{htt} 5.5.4.15)
-    Let $C$ be a presentable $\infty-$category, $S$ be a set of morphisms in $C$. Let $C'$ be the full subcategory of $C$ spanned by S-local objects, then the inclusion $C' \hookrightarrow C$ admits a left adjoint $L_S:C\to C'$.
+    Let $C$ be a presentable $\infty-$category, $S$ be a small set of morphisms in $C$. Let $C'$ be the full subcategory of $C$ spanned by S-local objects, then the inclusion $C' \hookrightarrow C$ admits a left adjoint $L_S:C\to C'$.
 \end{theorem}
 
 A classic example of S-localization is sheafification. Recall that for a Grothendieck site $(C,\tau)$, a presheaf $F$ is a sheaf if for any covering $\mathcal{U}$, the map:
@@ -864,6 +864,17 @@ Since $\text{PSh}(C)$ is presentable, by the above theorem we have:
     The inclusion $\text{Shv}(C,\tau) \hookrightarrow \text{PSh}(C)$ admits a left adjoint, i.e. the sheafification functor. We denote it as $L_\tau:\text{PSh}(C) \to \text{Shv}(C,\tau)$.
 \end{corollary}
 
+Finally, we have the following universal property of S-localization, which explains the reasonability of the name.
+\begin{theorem}(\cite{htt} 5.5.4.20)\label{thm: S-localization universal}
+    Let $C$ be a presentable $\infty$-category, $S$ be a small set of morphisms in $C$. Let $L_S: C \rightarrow C'$ be the S-localization functor. Then for any functor $F: C \to \mathcal{E}$ that sends morphisms in $S$ to equivalences in $\mathcal{E}$, there exists an essentially unique functor $\widetilde{F}: C' \to \mathcal{E}$ such that
+    \[
+    \begin{tikzcd}
+    C \arrow[r, "L_S"] \arrow[dr, "F"'] & C' \arrow[d, "\widetilde{F}", dashed] \\
+    & \mathcal{E}
+    \end{tikzcd}
+    \]
+    commutes.
+\end{theorem}
 \subsubsection{Properties of presentable categories}
 
 Presentable categories are very useful in practice, we could firstly show some important properties of presentable categories here.
@@ -1135,7 +1146,7 @@ The correct way to define the unstable motivic homotopy category is to combine t
 Since $\text{PSh}(Sm/S)$ is presentable, we can define the motivic localization functor.
 
 \begin{definition}
-    Let $L_{\text{mot}}:\text{PSh}(Sm/S) \to \text{PSh}(Sm/S)$ be the S-localization functor with respect to the set $S$ defined above. We call $L_{\text{mot}}$ the motivic localization functor.
+    Let $L_{\text{mot}}:\text{PSh}(Sm/S) \to \mathcal{H}(S)$ be the S-localization functor with respect to the set $S$ defined above. We call $L_{\text{mot}}$ the motivic localization functor.
 \end{definition}
 
 Since $\text{PSh}(Sm/S)$ is accessible, $\mathcal{H}(S)$ is accessible; since $\text{PSh}(Sm/S)$ is cocomplete and $L_{\text{mot}}$ preserves colimits, $\mathcal{H}(S)$ is cocomplete.
@@ -1163,27 +1174,23 @@ These two examples provide two embedding from $\mathscr{S}$ and $Sm/S$ to $\math
     We call the constant sheaf valued on $\Delta[1]/\partial\Delta[1]$ the standard sphere, denoted as $S_s^1$. We call the yoneda embedding of $\mathbb{P}^1$ the tate sphere, denoted as $S_t^1$.
 \end{definition}
 
-\subsection{Tate sphere}
-
-We will talk in pointed case in this section. Since the functor $()_+$ has functorality in $Cat_\infty$, it commuates with any functor. Thus with an abuse of notation, we will not distinguish the theory in pointed case with that of unpointed case.
-
-\begin{remark}
-    We denote the product in $Sh_{\bullet}(Sm/S)$ as $\wedge$, i.e. the smash product.
-\end{remark}
+Actually, here are several equivalent definitions of the tate sphere, as shown in the following proposition.
 
 \begin{proposition}
-    The following objects (or more precisely, the yoneda embedding of them) in $Sh_{\bullet}(Sm/S)$ are $\mathbb{A}^1$-equivalent.
+    The following objects in $\mathcal{H}(S)_\bullet$ are equivalent:
 
-    1. $\mathbb{P}^1$;
+    1. The projective line $\mathbb{P}^1$;
 
-    2. cofiber of $\mathbb{G}_m\hookrightarrow \mathbb{A}^1$;
+    2. The cofiber of the inclusion $\mathbb{G}_m \hookrightarrow \mathbb{A}^1$;
 
-    3. $S^1\wedge \mathbb{G}_m$.
+    3. The smash product $S^1 \wedge \mathbb{G}_m$.
+    
+    All of these give equivalent definitions of the tate sphere $S_t^1$.
 \end{proposition}
 
-As a result, these objects in $Sh_{\bullet}(Sm/S)$ well-define an object in $\mathcal{H}(S)_\bullet$, which we call ``tate sphere" or ``motivic sphere".
-    
-As in classic algebraic topology, the ``sphere" induces the infinite loop functor, which gives rise to the stable motivic homotopy theory.
+\subsection{Closed symmetric monoidal structure on $\mathcal{H}(S)_\bullet$}
+
+
 
 % Chapter 4 - Stable Motivic Homotopy Theory
 \section{Stable Motivic Homotopy Theory}
@@ -1206,7 +1213,7 @@ The classic stabilization process depend ont the suspension functor defined by $
 
 We also have the universal property of such stabilization.
 
-\begin{theorem}
+\begin{theorem}[Robalo]\label{thm:robalo's stabilization}
     Let $\mathcal{C}^\otimes$ be a closed presentable symmetric monoidal pointed $\infty$-category, $X\in \mathcal{C}$ be an object. For every $\mathcal{D}^\otimes \in \operatorname{Pr}^{\otimes,L}_{\text{St}}$ and morphism $F: \mathcal{C}^{\otimes} \rightarrow \mathcal{D}^{\otimes}$ in $\operatorname{Pr}^{\otimes,L}$ for which the object $F(X)$ is invertible (admits an inverse with respect to $\otimes$), there exists an essentially unique morphism $\hat{F}: \mathcal{C}[X^{-1}]^{\otimes} \rightarrow \mathcal{D}^{\otimes}$ in $\operatorname{Pr}^{\otimes,L}$ such that the following diagram commutes:
 
     \[
@@ -1219,110 +1226,51 @@ We also have the universal property of such stabilization.
     That is, $F \simeq \hat{F} \circ \Sigma^{\infty}_X$.
 \end{theorem}
 
-\begin{remark}
-    Denote $S_t^1$ as the tate sphere, $S_s^1$ as the standard sphere.
-\end{remark}
+\subsection{Stable motivic homotopy category}
 
 \begin{definition}
-    The s-suspension functor $\Sigma_s:\mathcal{H}(S)_\bullet \to \mathcal{H}(S)_\bullet$ is defined as the functor: $-\wedge S_s^1$, while the t-suspension functor $\Sigma_t:\mathcal{H}(S)_\bullet \to \mathcal{H}(S)_\bullet$ is defined as the functor: $-\wedge S_t^1$.
+    Let $S$ be a Noethrian scheme. We define the stable motivic homotopy category $\mathcal{SH}(S)$ as the stabilization of $\mathcal{H}(S)_\bullet$ with respect to the tate sphere $S_t^1$:
+
+    $\mathcal{SH}(S):= \mathcal{H}(S)_\bullet[S_t^1]$.
 \end{definition}
 
-\begin{definition}
-    The s-loop functor is defined as $\text{Maps}(S_s^1,-)$, while the t-loop functor is defined as $\text{Maps}(S_t^1,-)$.
-\end{definition}
+As an immediate corollary of theorem \ref{thm:robalo's stabilization}, we have the universal property of stable motivic homotopy category.
 
-\begin{proposition}
-    There are two adjunctions:
+\begin{theorem}\label{thm:universal property of stable motivic homotopy category}
+    Let $S$ be a Noetherian scheme. For every $\mathcal{D}^\otimes \in \operatorname{Pr}^{\otimes,L}_{\text{St}}$ and morphism $F: \mathcal{H}(S)_\bullet^{\otimes} \rightarrow \mathcal{D}^{\otimes}$ in $\operatorname{Pr}^{\otimes,L}$ for which the object $F(\mathbb{P}^1)$ is invertible (admits an inverse with respect to $\otimes$), there exists an essentially unique morphism $\hat{F}: \mathcal{SH}(S)^{\otimes} \rightarrow \mathcal{D}^{\otimes}$ in $\operatorname{Pr}^{\otimes,L}$ such that the following diagram commutes:
 
-    $\Sigma_s: \mathcal{H}(S)_\bullet \rightleftarrows \mathcal{H}(S)_\bullet: \Omega_s$;
+    \[
+    \begin{tikzcd}
+    \mathcal{H}(S)_\bullet^{\otimes} \arrow[r, "F"] \arrow[d, "\Sigma^{\infty}_{S_t^1}"'] & \mathcal{D}^{\otimes} \\
+    \mathcal{SH}(S)^{\otimes} \arrow[ur, "\hat{F}"', dashed] &
+    \end{tikzcd}
+    \]
 
-    $\Sigma_t: \mathcal{H}(S)_\bullet \rightleftarrows \mathcal{H}(S)_\bullet: \Omega_t$.
-\end{proposition}
+    That is, $F \simeq \hat{F} \circ \Sigma^{\infty}_{S_t^1}$.
+\end{theorem}
 
-\begin{definition}\label{shs}
-    The stable motivic homotopy category $\mathcal{SH}_s(S)$ (or simply denoted as $\mathcal{SH}(S)$) is defined as:
+Combine the universal property in theorem \ref{thm: S-localization universal} and theorem \ref{thm:universal property of stable motivic homotopy category}, we can easily get the universal property of stable motivic homotopy category as we expected.
 
-$    \operatorname{colim}[\mathcal{H}(S)\bullet \xrightarrow{\Sigma_s} \mathcal{H}(S)\bullet \xrightarrow{\Sigma_s} \cdots]\in \text{Pr}^L$
+\begin{theorem}
+    Let $S$ be a Noetherian scheme. For every $\mathcal{D}^\otimes \in \operatorname{Pr}^{\otimes,L}_{\text{St}}$ and morphism $F: Sm/S^{\times} \rightarrow \mathcal{D}^{\otimes}$ in $\operatorname{Pr}^{\otimes,L}$ for which the following conditions hold:
 
-While the $\mathcal{SH}_t(S)$ can be defined as:
+    1. $F$ satisfies Nisnevich descent;
 
-$    \operatorname{colim}[\mathcal{H}(S)\bullet \xrightarrow{\Sigma_t} \mathcal{H}(S)\bullet \xrightarrow{\Sigma_t} \cdots]\in \text{Pr}^L$
+    2. $F$ is $\mathbb{A}^1-$invariant;
 
-The object in motivic homotopy category is called ``motivic spectra".
+    3. The object $F(\mathbb{P}^1)$ is invertible (admits an inverse with respect to $\otimes$);
 
-\end{definition}
+    then there exists an essentially unique morphism $\hat{F}: \mathcal{SH}(S)^{\otimes} \rightarrow \mathcal{D}^{\otimes}$ in $\operatorname{Pr}^{\otimes,L}$ such that the following diagram commutes:
 
-In duality, we can also define $    \operatorname{lim}[\mathcal{H}(S)\bullet \xleftarrow{\Omega_s} \mathcal{H}(S)\bullet \xleftarrow{\Omega_s} \cdots]\in \text{Pr}^R$, $    \operatorname{lim}[\mathcal{H}(S)\bullet \xleftarrow{\Omega_t} \mathcal{H}(S)\bullet \xleftarrow{\Omega_t} \cdots]\in \text{Pr}^R$. Since $\mathcal{H}(S)_\bullet$ is presentable, we have similar propositions like \ref{duality}.
+    \[
+    \begin{tikzcd}
+    Sm/S^{\times} \arrow[r, "F"] \arrow[d, "\Sigma^{\infty}_{S_t^1} \circ ()_+ \circ L_{\text{mot}}"'] & \mathcal{D}^{\otimes} \\
+    \mathcal{SH}(S)^{\otimes} \arrow[ur, "\hat{F}"', dashed] &
+    \end{tikzcd}
+    \]
 
-\begin{proposition}
-
-    The colimit $    \operatorname{colim}[\mathcal{H}(S)\bullet \xrightarrow{\Sigma_s} \mathcal{H}(S)\bullet \xrightarrow{\Sigma_s} \cdots]$ corresponds to the limit $\operatorname{lim}[\mathcal{H}(S)\bullet \xleftarrow{\Omega_s} \mathcal{H}(S)\bullet \xleftarrow{\Omega_s} \cdots]$ via $\text{Pr}^L\simeq (\text{Pr}^R)^{op}$;
-
-    The colimit $    \operatorname{colim}[\mathcal{H}(S)\bullet \xrightarrow{\Sigma_t} \mathcal{H}(S)\bullet \xrightarrow{\Sigma_t} \cdots]$ corresponds to the limit $\operatorname{lim}[\mathcal{H}(S)\bullet \xleftarrow{\Omega_t} \mathcal{H}(S)\bullet \xleftarrow{\Omega_t} \cdots]$ via $\text{Pr}^L\simeq (\text{Pr}^R)^{op}$.
-\end{proposition}
-
-So we will not distingush the colimit and limit and call them all as $\mathcal{SH}_s(S)$ and $\mathcal{SH}(S)$.
-
-\begin{remark}
-    $\Sigma_{*}:\mathcal{H}(S)_\bullet\to \mathcal{SH}_{*}(S)$ and $\Omega_{*}:\mathcal{H}(S)_\bullet\to \mathcal{SH}_{*}(S)$ each natrually induce functor from $\mathcal{SH}_{*}(S)$ to $\mathcal{SH}_{*}(S)$ $(*\in \{s,t\})$. With a little abuse of notation, we still denote them as $\Sigma_{*} $ and $\Omega_{*}$.
-\end{remark}
-
-\begin{remark}
-    
-Since the stabilization precess we've mentioned in \ref{shs} has functorality, the process can be considered as a functor from $\mathcal{H}(S)_\bullet$ to $\mathcal{SH}(S)$, which we denoted as $\Sigma_*^\infty$, $*\in\{s,t\}$.
-
-Duality, we denote the functor from $\mathcal{SH}(S)$  to $\mathcal{H}(S)_\bullet$ which maps a spectrum to its first term.
-\end{remark}
-
-\begin{remark}
-    We will denote$\Sigma_*[k]$  as $\Sigma_*^k$, $\Omega_*[k]$ as $\Omega_*^k,*\in\{s,t\}$;
-
-    We will denote $\Sigma_*^\infty\circ\Sigma_*[k]$  as $\Sigma_*^{\infty-k}$, $\Omega_*^\infty\circ\Omega_*[k]$  as $\Omega_*^{\infty-k},*\in\{s,t\}$.
-
-    It's easy to verify the commutativity of these functors, which is why we use additivity to represent its index.
-\end{remark}
-
-\begin{proposition}
-    There are two adjunctions:
-
-$    \Sigma_*^{\infty-k}: \mathcal{H}(S)\bullet \rightleftarrows \mathcal{SH}_*(S): \Omega_*^{\infty-k}$ , $*\in \{s,t\}$;
-\end{proposition}
-
-As for bigraded cases, the situation become a little more complicated.
-
-\begin{definition}
-The category $\mathcal{SH}_{s,t}(S)$ can be defined as:
-\[
-\mathop{\mathrm{lim}}\limits_{\substack{\longrightarrow \\ \Sigma_s, \Sigma_t}} 
-\left[
-\begin{tikzcd}[
-  row sep=1.5em, 
-  column sep=1.5em,
-  cells={nodes={minimum width=2em}} % 统一节点宽度
-]
-\cdots \arrow[r, "\Sigma_s"] & \cdots \arrow[r, "\Sigma_s"] & \cdots \arrow[r, "\Sigma_s"] & \cdots \\
-\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
-\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
-\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
-\cdots \arrow[u, "\Sigma_t"'] \\
-\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
-\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
-\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
-\cdots \arrow[u, "\Sigma_t"'] \\
-\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
-\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
-\mathcal{H}(S)_\bullet \arrow[r, "\Sigma_s"] \arrow[u, "\Sigma_t"'] & 
-\cdots \arrow[u, "\Sigma_t"']
-\end{tikzcd}
-\right]\in \text{Pr}^L
-\]
-\end{definition}
-
-Similarily we can define $  \Sigma_{s,t}^{\infty,\infty}$ as the stabilization functor and $\Omega_{s,t}^{\infty,\infty}$ as taking the $(1,1)-$term of the spectrum. The definition of $\Sigma_{s,t}^{i,j}$ as well as $\Omega_{s,t}^{i,j}$ is similar.
-
-\begin{proposition}
-    $    \Sigma_{s,t}^{\infty-i,\infty-j}: \mathcal{H}(S)\bullet \rightleftarrows \mathcal{SH}_{s,t}(S): \Omega_{s,t}^{\infty-i,\infty-j}$.
-\end{proposition}
+    That is, $F \simeq \hat{F} \circ \Sigma^{\infty}_{S_t^1} \circ L_{\text{mot}}$.
+\end{theorem}
 
 \subsection{Motivic cohomology}
 
@@ -1395,49 +1343,6 @@ The next example we're cared about is the algebaric K-theory spectrum.
     The algebraic K-theory spectrum represents algebraic K-theory.
 \end{proposition}
 
-\subsection{Universal Property}
-
-In this section, we will show that the stable motivic homotopy category $\mathcal{SH}(S)$ is indeed ``motivic",i.e. has the universal property, which is proved by Robalo in 2012\cite{Robalo2012arxiv}.
-
-\begin{definition}
-    Let $X,Y \in \mathcal{SH}(S),X \otimes Y:=\lim _n n \lim _m\left(\Sigma^{\infty}\left(X_n \wedge Y_m\right)[-(n+m)]\right)$
-\end{definition}
-
-\begin{definition}
-    Let $X,Y \in \mathcal{H}(S), map(X,Y):=([X,Y[n]],[[X,Y[n]]\to [X,\Omega Y[n+1]]\to \Omega[X,Y[n+1]]])$.
-\end{definition}
-
-\begin{proposition}
-    The $\otimes$ functor and the $map$ functor define a symmetric monoidal closed structure on $\mathcal{SH}(S)$.
-\end{proposition}
-
-Since $\mathcal{H}(S)$ is presentable, we have:
-
-\begin{proposition}
-    $\mathcal{SH}(S)$ is pointed and presentable.
-\end{proposition}
-
-\begin{proposition}
-    The composition of functor $L_{\mathbb{A}^1}\circ()_+\circ h_C$: $Sm/S \to \mathcal{SH}(S)$ is a symmetric monoidal, colimit-preserving functor.
-\end{proposition}
-
-\begin{theorem}\cite{Robalo2012arxiv}
-    Let $D^{\otimes}$ be a pointed presentable symmetric monoidal $(\infty,1)-$category, then the composition map:
-
-    $Fun^{\otimes,L}(\mathcal{SH}(S)^\otimes,D^\otimes)\to Fun^{\otimes,L}(Sm/S^\times,D^\otimes)$ 
-
-    is fully faithful and its image satisfies:
-
-    1.Nisnevich excision property;
-
-    2.$\mathbb{A}^1$-invariant; 
-
-    3.send Tate sphere to an invertible object.
-
-    
-\end{theorem}
-
-This theorem completes the original motivation for our topic, i.e. find a universal cohomology theory such that every cohomology theory passes through it.
 
 \subsection{Six functor fomalism}
 
