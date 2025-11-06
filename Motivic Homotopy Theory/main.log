@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.3)  6 NOV 2025 03:38
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.3)  6 NOV 2025 04:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1261,11 +1261,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1191.
 
 [21] [22] [23] [24]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1383.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1398.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 1391--1394
+Underfull \hbox (badness 10000) in paragraph at lines 1406--1409
 []\T1/lmr/m/n/10.95 Chen Lin. In-fi-nite Cat-e-gory The-ory. []$\T1/lmtt/m/n/10.95 https : / / windshower . github . io / linchen /
  []
 
@@ -1274,18 +1274,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 1391--1394
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: BE68B5B1C20900A9EE5C7AF529126AEF;6082.
+(rerunfilecheck)             Checksum: F57AB9C69295C02E73757C8312271EA8;6087.
  ) 
 Here is how much of TeX's memory you used:
- 34267 strings out of 468219
- 674517 string characters out of 5437898
- 1044635 words of memory out of 5000000
- 62417 multiletter control sequences out of 15000+600000
+ 34269 strings out of 468219
+ 674560 string characters out of 5437898
+ 1043704 words of memory out of 5000000
+ 62419 multiletter control sequences out of 15000+600000
  780449 words of font info for 203 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  84i,16n,104p,647b,1174s stack positions out of 10000i,1000n,20000p,200000b,200000s

@@ -1192,7 +1192,7 @@ Actually, here are several equivalent definitions of the tate sphere, as shown i
 
 
 
-\begin{theorem}
+\begin{theorem}\label{thm: monoidal structure on H(S)}
     The unstable motivic homotopy category $\mathcal{H}(S)_\bullet$ admits a symmetric monoidal structure, where the monoidal product is given by the smash product $\wedge$.
 \end{theorem}
 
@@ -1228,6 +1228,11 @@ The classic stabilization process depend ont the suspension functor defined by $
 
     We will denote the stabilization functor from $\mathcal{C}$ to $\mathcal{C}[X^{-1}]$ as $\Sigma^{\infty}_X:\mathcal{C}\to \mathcal{C}[X^{-1}]$.
 \end{definition}
+
+\begin{theorem}[Robalo]
+    Let $\mathcal{C}^\otimes$ be a presentable symmetric monoidal pointed $\infty$-category, $X\in \mathcal{C}$ be an object. Then the stabilization $\mathcal{C}[X^{-1}]$ inherits a symmetric monoidal structure from $\mathcal{C}^\otimes$, making the stabilization functor $\Sigma^{\infty}_X: \mathcal{C}^\otimes \to \mathcal{C}[X^{-1}]^\otimes$ a symmetric monoidal functor.
+\end{theorem}
+
 
 We also have the universal property of such stabilization.
 
@@ -1362,12 +1367,22 @@ The next example we're cared about is the algebaric K-theory spectrum.
 \end{proposition}
 
 
-\subsection{Six functor fomalism}
+\subsection{Six functor formalism}
 
-In 2007, Ayoub \cite{Ayoub2007} found that the stable motivic homotopy category $\mathcal{SH}(S)$ admits a six functor theory, which can be seen as an enhance of cohomology theory.
+It was Ayoub who first found the six functor formalism structure on stable motivic homotopy category in 2007. In 2020, Drew and Gallauer proved that such six functor formalism is universal among all six functor formalisms.
 
 \begin{theorem}(\cite{Ayoub2007})
     There is a six functor theory on $(Sm/S,\mathcal{SH}(S))$, where $E$ is the set of separated morphisms of finite type.
+\end{theorem}
+
+\begin{theorem}(\cite{Drew2022})
+    The six functor formalism on stable motivic homotopy category is universal among all six functor formalisms satisfying the following conditions:
+
+    1. Homotopy invariance;
+
+    2. Stability;
+
+    3. Localization.
 \end{theorem}
 
 \begin{thebibliography}{99}
@@ -1456,6 +1471,11 @@ Noncommutative motives I: A universal characterization of the motivic stable hom
 Joseph Ayoub.
 \textit{Les six opérations de Grothendieck et le formalisme des cycles évanescents dans le monde motivique (I)}.
 Astérisque, volume 314. Société Mathématique de France, 2007. 476 pages.
+
+\bibitem{Drew2022}
+Drew Brad and Martin Gallauer.
+The universal six-functor formalism.
+\textit{Annals of K-theory}, 7(4):599--649, 2022.
 
 \end{thebibliography}
 
