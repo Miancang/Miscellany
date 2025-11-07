@@ -95,6 +95,7 @@
 \newtheorem{corollary}[definition]{Corollary}
 \newtheorem{remark}[definition]{Remark}
 \newtheorem{example}[definition]{Example}
+\newtheorem{definition-proposition}[definition]{Definition-Proposition}
 
 % 直立体数学符�?
 \providecommand{\dd}{\mathop{}\!\mathrm{d}}
@@ -967,69 +968,87 @@ Thus we can talk about the universal property in $\operatorname{Pr}^{\otimes,L}$
 
 
 
+
 \subsection{Six functor formalism}
 
-Six functor formalism is a synthetic framework to study homology/cohomology theories, allowing us to define homology and cohomology in its internal language.
+Six functor formalism is a synthetic framework to study homology/cohomology theories, allowing us to define homology and cohomology in its internal language. This section is mainly based on \cite{ScholzeSF} and \cite{HeyerMann2024}.
 
-The contents of this section come from \cite{ScholzeSF} and \cite{HeyerMann2024}.
+Roughly speaking, given a category $\mathcal{C}$ of geometric objects, a six functor formalism is a system that assigns to each object $X$ in $\mathcal{C}$ a corresponding category $\mathcal{D}(X)$ and provides six fundamental operations (functors) between these categories as follows:
+1. Pullback Functors:
+    - $f^*: \mathcal{D}(Y) \to \mathcal{D}(X)$ for a morphism $f: X \to Y$ in $\mathcal{C}$.
 
-\begin{definition}(Naive)
-    A six functor theory contains the following data:
+2. Pushforward Functors:
+    - $f_*: \mathcal{D}(X) \to \mathcal{D}(Y)$ for a morphism $f: X \to Y$ in $\mathcal{C}$.
 
-(1) An $\infty$-category $C$ which admits finite limits.
+3. Exceptional Pullback Functors:
+    - $f^!: \mathcal{D}(Y) \to \mathcal{D}(X)$ for a morphism $f: X \to Y$ in $\mathcal{C}$.
 
-(2) A class of morphisms $E$ contains all isomorphisms, and is stable under pullback and composition.
+4. Exceptional Pushforward Functors:
+    - $f_!: \mathcal{D}(X) \to \mathcal{D}(Y)$ for a morphism $f: X \to Y$ in $\mathcal{C}$.
 
-(3) An association $X \mapsto D(X)$ from $C$ to $\infty$- categories $D(X)$.
+5. Tensor Product Functor:
+    - $\otimes: \mathcal{D}(X) \times \mathcal{D}(X) \to \mathcal{D}(X)$.
 
-(4) A symmetric monoidal closed structure on $D(X)$, where the tensor functor and the internal hom functor are denoted as $\otimes$ and $\mathcal{H}om$.
+6. Internal Hom Functor:
+    - $\mathcal{H}om: \mathcal{D}(X)^{op} \times \mathcal{D}(X) \to \mathcal{D}(X)$.
 
-(5) For each $f: X \rightarrow Y$, a pullback functor $f^*: D(Y) \rightarrow D(X)$ and a pushforward functor $f_*: D(X) \rightarrow D(Y)$.
+These functors are required to satisfy:
 
-(6) For each $f: X \rightarrow Y$ in $E$, a proper pullback functor $f^{!}: D(Y) \rightarrow D(X)$ and  a proper pullback functor $f^{!}: D(Y) \rightarrow D(X)$ .
+- Adjunctions: There are adjunctions between pairs $(f^*, f_*)$, $(f_!, f^!)$ and $(\otimes, \mathcal{H}om)$.
 
-which satisfies the following compatible conditions:
+- Compatibility: The pullback functor $f^*$ commutes with the tensor product $\otimes$.
 
-$f^*: D(Y) \rightarrow D(X) \quad \dashv \quad f_*: D(X) \rightarrow D(Y)$;
+- Proper Base change formula: For a pullback square in $\mathcal{C}$:
+\[\begin{tikzcd}
+X' \arrow[r, "g'"] \arrow[d, "f'"] & X \arrow[d, "f"] \\
+Y' \arrow[r, "g"] & Y
+\end{tikzcd}\]
+there is a natural isomorphism: $g^! f_* \simeq f'_* g'^!$.
 
-$f_{!}: D(X) \rightarrow D(Y) \quad \dashv \quad f^!: D(Y) \rightarrow D(X)$;
+- Projection formula: For any morphism $f: X \to Y$ in $\mathcal{C}$, objects $M \in \mathcal{D}(Y)$ and $N \in \mathcal{D}(X)$, there is a natural isomorphism:
+\[ f_!(f^* M \otimes N) \simeq M \otimes f_! N \]
 
-For a pullback diagram \[
-\begin{tikzcd}
-Y' \ar[r,"g'"] \ar[d,"f'"'] & Y \ar[d,"f"] \\
-X' \ar[r,"g"] & X
-\end{tikzcd}
-\] 
-
-there exists isormorphism of functors: $g^* f_{!} \simeq f_{!}^{\prime} g^{\prime *}$;
-
-Let $f:Y\to X\in E, M\in D(X),N\in D(Y)$, then we have $M \otimes f_{!} N \simeq f_{!}\left(f^* M \otimes N\right)$.
-
-$f^*$ and $f_!$ are compatible with composition.
+However, as Scholze pointed out in \cite{ScholzeSF}, this naive framework fails to capture the compatibility information. For example, the base change formula should be compatible with composition of base change squares. So we need to consider the six functor formalism in a higher categorical setting.
 
 \begin{definition}
-    Let $(C,E)$ be a six functor theory, we can define the cohomology $\Gamma(X,\Lambda)=p_* 1$ for $X\in C$, whre $p:X \to *$, $1$ is the unit in $D(X)$.
+        A geometric setup is a pair $(\mathcal{C}, \mathcal{E})$ where $\mathcal{C}$ is an $\infty$-category admitting pullbacks and $\mathcal{E}$ is a wide subcategory of $\mathcal{C}$ which satisfies:
 
-    For $p \in E$, we can define the cohomology with compact support $\Gamma_c(X,\Lambda)=p_!1$.
+        1. $\mathcal{E}$ is stable under pullbacks;
 
-    We define $\omega_X:=p^!1$, where $1$ is the unit of $D(*)$.
+        2. $\mathcal{E}$ admits fiber products and the inclusion $\mathcal{E} \hookrightarrow \mathcal{C}$ preserves fiber products.
 \end{definition}
 
-\begin{proposition} (Küneth formula)
+\begin{definition-proposition}(\cite{HeyerMann2024} 2.2.10)
+    Given a geometric setup $(\mathcal{C}, \mathcal{E})$, there exists a symmetric monoidal $\infty$-category $\text{Corr}(\mathcal{C}, \mathcal{E})^{\otimes}$ called the correspondence category of $(\mathcal{C}, \mathcal{E})$, which satisfies:
+    \begin{itemize}
+        \item Objects are the same as $\mathcal{C}$;
+        \item A morphism from $X$ to $Y$ is given by a correspondence:
+        \[\begin{tikzcd}
+        & Z \arrow[dl, "f"'] \arrow[dr, "g"] & \\
+        X & & Y
+        \end{tikzcd}\]
+        where $f \in \mathcal{C}$ and $g \in \mathcal{E}$;
+        \item The composite of two correspondence $X \xleftarrow{f} Z \xrightarrow{g} Y$ and $Y \xleftarrow{f'} Z' \xrightarrow{g'} W$ is given by the pullback square:
+        \[\begin{tikzcd}
+        & & Z \times_Y Z' \arrow[dl, "p_1"'] \arrow[dr, "p_2"] & \\
+        & Z \arrow[dl, "f"'] \arrow[dr, "g"] & & Z' \arrow[dl, "f'"'] \arrow[dr, "g'"] \\
+        X & & Y & & W
+        \end{tikzcd}\]
+        
+    \end{itemize}
+\end{definition-proposition}
 
-    Let $X,Y \in C$, then we have:
-
-$    \Gamma_c(X \times Y, \Lambda) \simeq \Gamma_c(X, \Lambda) \otimes \Gamma_c(Y, \Lambda) .$
-    
-\end{proposition}
-
-\begin{proposition}(Poincaré duality)
-
- $p_*\omega_X\simeq \mathcal{H}om(\Gamma_c(X,\Lambda),\Lambda)$.
-    
-\end{proposition}
-
+\begin{definition}
+    Let $(\mathcal{C}, \mathcal{E})$ be a geometric setup, a 3-functor formalism on $(\mathcal{C}, \mathcal{E})$ is a lax symmetric monoidal functor:
+    \[ \mathcal{D}: \text{Corr}(\mathcal{C}, \mathcal{E})^{\otimes} \to \text{Cat}_\infty^{\otimes} \]
 \end{definition}
+
+Notice that $\mathcal{D}$ maps objects $X$ in $\mathcal{C}$ to $\infty$-categories $\mathcal{D}(X)$. For a morphism $f: X \to Y$ in $\mathcal{C}$, there is a correspondence $Y \xleftarrow{f} X \xrightarrow{\text{id}} X$, while for a morphism $g: X \to Y$ in $\mathcal{E}$, there is a correspondence $X \xleftarrow{\text{id}} X \xrightarrow{g} Y$. Thus $\mathcal{D}$ induces two functors:
+
+- $f^* := \mathcal{D}(Y \xleftarrow{f} X \xrightarrow{\text{id}} X): \mathcal{D}(Y) \to \mathcal{D}(X)$
+
+- $g_! := \mathcal{D}(X \xleftarrow{\text{id}} X \xrightarrow{g} Y): \mathcal{D}(X) \to \mathcal{D}(Y)$
+
 
 % Chapter 3 - Unstable Motivic Homotopy Theory
 \section{Unstable Motivic Homotopy Theory}
