@@ -1043,13 +1043,24 @@ However, as Scholze pointed out in \cite{ScholzeSF}, this naive framework fails 
     \[ \mathcal{D}: \text{Corr}(\mathcal{C}, \mathcal{E})^{\otimes} \to \text{Cat}_\infty^{\otimes} \]
 \end{definition}
 
-Notice that $\mathcal{D}$ maps objects $X$ in $\mathcal{C}$ to $\infty$-categories $\mathcal{D}(X)$. For a morphism $f: X \to Y$ in $\mathcal{C}$, there is a correspondence $Y \xleftarrow{f} X \xrightarrow{\text{id}} X$, while for a morphism $g: X \to Y$ in $\mathcal{E}$, there is a correspondence $X \xleftarrow{\text{id}} X \xrightarrow{g} Y$. Thus $\mathcal{D}$ induces two functors:
+Notice that $\mathcal{D}$ maps objects $X$ in $\mathcal{C}$ to $\infty$-categories $\mathcal{D}(X)$. For a morphism $f: X \to Y$ in $\mathcal{C}$, there is a correspondence $Y \xleftarrow{f} X \xrightarrow{\text{id}} X$, while for a morphism $g: X \to Y$ in $\mathcal{E}$, there is a correspondence $X \xleftarrow{\text{id}} X \xrightarrow{g} Y$. Thus $\mathcal{D}$ induces three functors:
 
 - $f^* := \mathcal{D}(Y \xleftarrow{f} X \xrightarrow{\text{id}} X): \mathcal{D}(Y) \to \mathcal{D}(X)$
 
 - $g_! := \mathcal{D}(X \xleftarrow{\text{id}} X \xrightarrow{g} Y): \mathcal{D}(X) \to \mathcal{D}(Y)$
 
+- $\otimes: \mathcal{D}(X) \times \mathcal{D}(X) \to \mathcal{D}(X)$, which is given by the composite:
+\[ \mathcal{D}(X) \times \mathcal{D}(X) \xrightarrow{\boxtimes} \mathcal{D}(X \times X) \xrightarrow{\Delta^*} \mathcal{D}(X) \]
 
+\begin{definition}
+    Let $(\mathcal{C}, \mathcal{E})$ be a geometric setup, a six functor formalism on $(\mathcal{C}, \mathcal{E})$ is a 3-functor formalism $\mathcal{D}: \text{Corr}(\mathcal{C}, \mathcal{E})^{\otimes} \to \text{Cat}_\infty^{\otimes}$ such that:
+    
+    1. For every morphism $f: X \to Y$ in $\mathcal{C}$, the functor $f^*: \mathcal{D}(Y) \to \mathcal{D}(X)$ admits a right adjoint $f_*: \mathcal{D}(X) \to \mathcal{D}(Y)$;
+    
+    2. For every morphism $g: X \to Y$ in $\mathcal{E}$, the functor $g_!: \mathcal{D}(X) \to \mathcal{D}(Y)$ admits a right adjoint $g^!: \mathcal{D}(Y) \to \mathcal{D}(X)$;
+
+    3. For every object $X$ in $\mathcal{C}$, the symmetric monoidal structure on $\mathcal{D}(X)$ is closed, i.e., the functor $\otimes M$ admits a right adjoint $\mathcal{H}om(M,-)$ for every $M \in \mathcal{D}(X)$.
+\end{definition}
 % Chapter 3 - Unstable Motivic Homotopy Theory
 \section{Unstable Motivic Homotopy Theory}
 
