@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.3)  6 NOV 2025 19:03
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.3)  6 NOV 2025 19:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1221,51 +1221,51 @@ Overfull \hbox (6.24567pt too wide) in paragraph at lines 891--893
  []
 
 [16] [17] [18] [19]
-Overfull \hbox (9.07297pt too wide) in paragraph at lines 1084--1085
+Overfull \hbox (9.07297pt too wide) in paragraph at lines 1085--1086
 [][]\T1/lmr/bx/n/10.95 Example 4.1. []\T1/lmr/m/n/10.95 Let $\OML/ntxmi/m/it/10.95 X \LMS/ntxsy/m/n/10.95 2 \OML/ntxmi/m/it/10.95 Sm\LMS/ntxsy/m/n/10.95 ^^9d\U/ntxsym/m/n/10.95 C$ \T1/lmr/m/n/10.95 with Zariski topol-ogy, $\LMS/ntxsy/m/n/10.95 F$ \T1/lmr/m/n/10.95 is a con-stant sheaf, then $[] \OML/ntxmi/m/it/10.95 H[]\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 X\LMS/ntxsy/m/n/10.95 ¹\U/ntxsym/m/n/10.95 C\LMS/ntxsy/m/n/10.95 º\OML/ntxmi/m/it/10.95 ; \LMS/ntxsy/m/n/10.95 Fº \U/ntxmia/m/it/10.95 =
  []
 
 
-Overfull \hbox (3.31635pt too wide) in paragraph at lines 1109--1110
+Overfull \hbox (3.31635pt too wide) in paragraph at lines 1110--1111
 []\T1/lmr/m/n/10.95 Now we can talk about the presheaf cat-e-gory $[]\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 Sm\LMS/ntxsy/m/n/10.95 ^^9d\OML/ntxmi/m/it/10.95 S\LMS/ntxsy/m/n/10.95 º$ \T1/lmr/m/n/10.95 and the sheaf cat-e-gory $[][]\LMS/ntxsy/m/n/10.95 ¹\OML/ntxmi/m/it/10.95 Sm\LMS/ntxsy/m/n/10.95 ^^9d\OML/ntxmi/m/it/10.95 S\LMS/ntxsy/m/n/10.95 º$
  []
 
 [20]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1144.
+(hyperref)                removing `math shift' on input line 1145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1144.
+(hyperref)                removing `superscript' on input line 1145.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1144.
+(hyperref)                removing `math shift' on input line 1145.
 
 [21]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1221.
+(hyperref)                removing `math shift' on input line 1222.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1221.
+(hyperref)                removing `subscript' on input line 1222.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\bullet' on input line 1221.
+(hyperref)                removing `\bullet' on input line 1222.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1221.
+(hyperref)                removing `math shift' on input line 1222.
 
 [22] [23] [24] [25]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1428.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1429.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 1436--1439
+Underfull \hbox (badness 10000) in paragraph at lines 1437--1440
 []\T1/lmr/m/n/10.95 Chen Lin. In-fi-nite Cat-e-gory The-ory. []$\T1/lmtt/m/n/10.95 https : / / windshower . github . io / linchen /
  []
 
