@@ -21,15 +21,17 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Stabilization and Spectra}{16}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Symmetric monoidal structure and universal property of spectra}{17}{subsubsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.3}Six functor formalism}{17}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Unstable Motivic Homotopy Theory}{19}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Nisnevich topology}{20}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {3.3.1}Definition of six functor formalism}{18}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Construction of six functor formalism}{19}{subsubsection.3.3.2}%
+\contentsline {section}{\numberline {4}Unstable Motivic Homotopy Theory}{20}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Nisnevich topology}{21}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Excision property}{21}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}$\mathbb {A}^1$-equivalent}{21}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}$\mathbb {A}^1$-equivalent}{22}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Unstable motivic homotopy category}{22}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Symmetric monoidal structure on $\mathcal {H}(S)_\bullet $}{23}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Stable Motivic Homotopy Theory}{23}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Robalo's Stabilization}{23}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Stable motivic homotopy category}{24}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Motivic cohomology}{25}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Motivic Spectra}{25}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Six functor formalism}{26}{subsection.5.5}%
+\contentsline {section}{\numberline {5}Stable Motivic Homotopy Theory}{24}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Robalo's Stabilization}{24}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Stable motivic homotopy category}{25}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Motivic cohomology}{26}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Motivic Spectra}{26}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Six functor formalism}{27}{subsection.5.5}%

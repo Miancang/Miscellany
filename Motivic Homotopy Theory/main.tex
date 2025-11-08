@@ -973,6 +973,8 @@ Thus we can talk about the universal property in $\operatorname{Pr}^{\otimes,L}$
 
 Six functor formalism is a synthetic framework to study homology/cohomology theories, allowing us to define homology and cohomology in its internal language. This section is mainly based on \cite{ScholzeSF} and \cite{HeyerMann2024}.
 
+\subsubsection{Definition of six functor formalism}
+
 Roughly speaking, given a category $\mathcal{C}$ of geometric objects, a six functor formalism is a system that assigns to each object $X$ in $\mathcal{C}$ a corresponding category $\mathcal{D}(X)$ and provides six fundamental operations (functors) between these categories as follows:
 
 1. Pullback Functors:
@@ -1012,7 +1014,7 @@ there is a natural isomorphism: $g^! f_* \simeq f'_* g'^!$.
 However, as Scholze pointed out in \cite{ScholzeSF}, this naive framework fails to capture the compatibility information. For example, the base change formula should be compatible with composition of base change squares. So we need to consider the six functor formalism in a higher categorical setting.
 
 \begin{definition}
-        A geometric setup is a pair $(\mathcal{C}, \mathcal{E})$ where $\mathcal{C}$ is an $\infty$-category admitting pullbacks and $\mathcal{E}$ is a wide subcategory of $\mathcal{C}$ which satisfies:
+        A geometric setup is a pair $(\mathcal{C}, \mathcal{E})$ where $\mathcal{C}$ is an $\infty$-category admitting finite limits and $\mathcal{E}$ is a wide subcategory of $\mathcal{C}$ which satisfies:
 
         1. $\mathcal{E}$ is stable under pullbacks;
 
@@ -1062,6 +1064,48 @@ Notice that $\mathcal{D}$ maps objects $X$ in $\mathcal{C}$ to $\infty$-categori
 
     3. For every object $X$ in $\mathcal{C}$, the symmetric monoidal structure on $\mathcal{D}(X)$ is closed, i.e., the functor $\otimes M$ admits a right adjoint $\mathcal{H}om(M,-)$ for every $M \in \mathcal{D}(X)$.
 \end{definition}
+
+\subsubsection{Construction of six functor formalism}
+
+In practice, usually we only have the functor $\mathcal{D}': \mathcal{C}^{op} \to \text{CMon}(\text{Cat}_\infty)$, which encodes the functors $f^*$ and $\otimes$. To construct a six functor formalism from $\mathcal{D}'$, we need to check some conditions.
+
+\begin{theorem}(\cite{Mann2022} A.5.10) \label{thm: six functor construction}
+    Given a functor $\mathcal{D}': \mathcal{C}^{op} \to \text{CMon}(\text{Cat}_\infty)$ with $I,P,E$ the classes of morphisms containing $\text{id}$ in $\mathcal{C}$ such that:
+
+    1. The classes of morphisms $I$ and $P$ are stable under pullback, composition and contain all isomorphisms. Any $f \in E$ is a composite $f=\bar{f} \circ j$ with $j \in I$ and $\bar{f} \in P$.
+
+    2. For any $f \in I$, the functor $f^*$ admits a left adjoint $f_{!}$ which satisfies base change and the projection formula.
+
+    3. For any $f \in P$, the functor $f^*$ admits a right adjoint $f_*$ which satisfies base change and the projection formula.
+
+    4. For any Cartesian diagram
+    \[
+    \begin{tikzcd}
+    X' \arrow[r, "j'"] \arrow[d, "g'"] & X \arrow[d, "g"] \\
+    Y' \arrow[r, "j"] & Y
+    \end{tikzcd}
+    \]
+    with $j \in I$ (hence $j^{\prime} \in I$) and $g \in P$ (hence $g^{\prime} \in P$), the natural map $j_{!} g_*^{\prime} \rightarrow g_* j_{!}^{\prime}$ is an isomorphism.
+
+    Then the functor $\mathcal{D}'$ extends to a six functor formalism on $(\mathcal{C}, \mathcal{E})$.
+\end{theorem}
+
+We call the set of morphisms $I$ as open immersions while the set of morphisms $P$ as proper morphisms.
+
+Actually, we can extend the correspondence to higher sense.
+
+\begin{definition-proposition}(\cite{Dauser2024})
+    Let $(\mathcal{C}, \mathcal{E})$ be a geometric setup. Let $E, I$ and $P$ be classes of morphisms of $\mathcal{C}$ as in the previous theorem, and assume that all morphisms in $\mathcal{E}$ are $n$-truncated for some $n$.
+
+    Then there exists an $\infty$-categoriey of functors
+        $$\mathcal{D}_0: \mathcal{C}^{\mathrm{op}} \rightarrow \operatorname{CMon}\left(\mathrm{Cat}_{\infty}\right)$$
+        satisfying property 1 from theorem \ref{thm: six functor construction}; and where morphisms $\mathcal{D}_0 \rightarrow \mathcal{D}_0^{\prime}$ are those natural transformations that also commute with the functors $j_{!}$ for $j \in I$ and $f_*$ for $f \in P$.
+\end{definition-proposition}
+
+Actually there is a equivalence between the $\infty$-category of functor $\mathcal{D}_0$ and the $\infty$-category of six functor formalisms on $(\mathcal{C}, \mathcal{E})$ which satisfies some other conditions. Furthermore, there is a presentable version of this equivalence.
+
+
+
 % Chapter 3 - Unstable Motivic Homotopy Theory
 \section{Unstable Motivic Homotopy Theory}
 
@@ -1400,24 +1444,36 @@ The next example we're cared about is the algebaric K-theory spectrum.
 
 \subsection{Six functor formalism}
 
-It was Ayoub who first found the six functor formalism structure on stable motivic homotopy category in 2007. In 2020, Drew and Gallauer proved that such six functor formalism is universal among all six functor formalisms.
+It was Ayoub who first found the six functor formalism structure on stable motivic homotopy category in 2007. In 2020, Drew and Gallauer proved that such six functor formalism is universal among all six functor formalisms on schemes satisfying certain conditions. Thus, we give another explanation of the universal property of stable motivic homotopy category.
 
-\begin{theorem}(\cite{Ayoub2007})
-    There is a six functor theory on $(Sm/S,\mathcal{SH}(S))$, where $E$ is the set of separated morphisms of finite type.
-\end{theorem}
 
-\begin{theorem}(\cite{Drew2022})
-    The six functor formalism on stable motivic homotopy category is universal among all six functor formalisms satisfying the following conditions:
+For the universal property, here we introduce the version of Scholze who improved Drew and Gallauer's work.
 
-    1. Homotopy invariance;
+\begin{theorem}(\cite{ScholzeSF} Theorem 11.1, \cite{Drew2022})
+    Let $\mathcal{C}$ be the category of separated finite type schemes over a Noetherian base ring $k$ where $Spec(k)$ is of finite Krull dimension, with open immersions $I$ and proper maps $P$. Consider the $\infty$-category of functors
 
-    2. Stability;
+    $$D: \mathcal{C}^{\mathrm{op}} \rightarrow \mathrm{CAlg}\left(\operatorname{Pr}_{\mathrm{st}}^L\right)$$
 
-    3. Localization.
+    satisfying the following properties:
+
+    \begin{enumerate}
+    \item[(0)] Pullbacks along open immersions $I$ admit left adjoints and pullbacks along proper maps admit right adjoints satisfying projection formula and base change.
+    
+    \item[(1)] All smooth maps are cohomologically smooth.
+    
+    \item[(2)] Excision holds: If $X$ has a closed subset $i: Z \subset X$ with open complement $j: U \rightarrow X$, then
+    $$j_{!} 1 \rightarrow 1 \rightarrow i_* 1$$
+    is exact in $D(X)$.
+    
+    \item[(3)] The homology of $\mathbb{A}^1$ is trivial, i.e. for $\pi: \mathbb{A}^1 \rightarrow \text{Spec}(k)$ the adjunction map
+    $$1 \rightarrow \pi_{!} \pi^{!} 1$$
+    is an isomorphism.
+    \end{enumerate}
+
+    Then this $\infty$-category has an initial object given by the stable motivic homotopy theory $\mathcal{SH}(k)$.
 \end{theorem}
 
 \begin{thebibliography}{99}
-
 \bibitem{htt}
 Jacob Lurie.
 \textit{Higher Topos Theory}.
@@ -1502,6 +1558,16 @@ Noncommutative motives I: A universal characterization of the motivic stable hom
 Joseph Ayoub.
 \textit{Les six opérations de Grothendieck et le formalisme des cycles évanescents dans le monde motivique (I)}.
 Astérisque, volume 314. Société Mathématique de France, 2007. 476 pages.
+
+\bibitem{Dauser2024}
+Adam Dauser and Josefien Kuijper.
+Uniqueness of six-functor formalisms.
+\textit{arXiv preprint}, arXiv:2412.15780, 2024.
+
+\bibitem{Mann2022}
+Lucas Mann.
+A p-adic 6-functor formalism in rigid-analytic geometry.
+PhD thesis, Rheinische Friedrich-Wilhelms-Universität Bonn, Germany, 2022.
 
 \bibitem{Drew2022}
 Drew Brad and Martin Gallauer.
