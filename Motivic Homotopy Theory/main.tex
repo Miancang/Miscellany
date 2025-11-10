@@ -162,7 +162,7 @@ $\textbf{Sp}$ & $\mathcal{SH}(S)$ \\
 
 In Chapter 2, we'll recommend the language of $\infty-$categories. Any reader who is already familiar with it can skip this chapter.
 
-In Chapter 3, we will firstly recommend some preliminaries that are important to understand the topic we'll discuss. It mainly contains higher topos theory, stable homotopy theory and six functor formalism.
+In Chapter 3, we will firstly recommend some preliminaries that are important to understand the topic we'll discuss. It mainly contains higher topos theory, stable homotopy theory, six functor formalism and algebraic K-theory.
 
 In Chapter 4, we will construct the unstable motivic homotopy category $\mathcal{H}(S)$ as a motivic localization of the Nisnevich presheaf category. We will also see the reasonability of such construction.
 
@@ -1104,7 +1104,42 @@ Actually, we can extend the correspondence to higher sense.
 
 Actually there is a equivalence between the $\infty$-category of functor $\mathcal{D}_0$ and the $\infty$-category of six functor formalisms on $(\mathcal{C}, \mathcal{E})$ which satisfies some other conditions. Furthermore, there is a presentable version of this equivalence.
 
+\subsection{Algebraic K-theory}
 
+In topological sense, we could define the topological K-theory on a compact space $X$ as the colimit of the vector bundles on $X$(i.e. the stable equivalence classes of vector bundles on $X$), then by classifying space we could represent the topological K-theory by a spectrum $KU$ called the K-theory spectrum. Similarily, Grothendieck defined the algebraic K-theory $K_0(X)$ of a ring $X$ as the group completion of the monoid of isomorphism classes of finitely generated projective modules over $X$(in 1957, actually before the topological K-theory was defined). Later, Quillen generalized the definition of algebraic K-theory to higher K-theory $K_n(X)$ in the 1970s. From the modern perspective, we could view algebraic K-theory as the $\infty$-group completion of $\text{Vect}(\text{Spec}(R))$.
+
+In general, we could also replace the $\text{Vect}(\text{Spec}(R))$ by any stable $\infty$-category. Thus we can define the algebraic K-theory as a functor $K: \text{Cat}_{\infty}^{st} \rightarrow \operatorname{CGrp}(\mathcal{S})$.
+
+The content of this section is mainly based on Wagner's notes \cite{Hebestreit2021}. To avoid symbol confusion, we use $\text{Grpd}_\infty$ instead of $\mathscr{S}$ to denote the $\infty$-groupoids in this section.
+
+\begin{definition}[S-construction]
+    We define the S-construction as the functor $S: \text{Cat}_{\infty}^{st} \rightarrow \text{sCat}_\infty^{st}$ as follows:
+
+    Let $S_n(C)$ be the full subcategory of $\text{Fun}(\text{Ar}[n],C)$ spanned by those functors $F:\text{Ar}[n] \to C$ such that all square in $\text{Ar}[n]$ of the form:
+
+    \[\begin{tikzcd}
+    (i\leq j) \arrow[r] \arrow[d] & (i\leq j+1) \arrow[d] \\
+    (i+1 \leq j) \arrow[r] & (i+1 \leq j+1)
+    \end{tikzcd}\]
+
+    are sent to pushout-pullback squares in $C$.
+
+    While the face and degeneracy maps are natural.
+\end{definition}
+
+\begin{theorem}
+    There is an equivalence of $\infty$-categories:
+
+    $B: \operatorname{Grp}(\text{Grpd}_\infty) \simeq (* / \text{Grpd}_\infty)_{\geqslant 1}: \Omega$.
+\end{theorem}
+
+\begin{lemma}
+    $|(\text{Core} S(C))|$ is connected.
+\end{lemma}
+
+\begin{definition}\label{def: algebraic K-theory}
+    We define the algebraic K-theory functor as the composite $\Omega \circ \mid \cdot \mid \circ \text{Core} \circ S$.
+\end{definition}
 
 % Chapter 3 - Unstable Motivic Homotopy Theory
 \section{Unstable Motivic Homotopy Theory}
@@ -1251,7 +1286,7 @@ These two examples provide two embedding from $\mathscr{S}$ and $Sm/S$ to $\math
 
 Actually, here are several $\mathbb{A}^1$-equivalent object in $\text{PSh}(Sm/S)$, thus equivalent in $\mathcal{H}(S)$, which all give equivalent definitions of the tate sphere.
 
-\begin{proposition}
+\begin{proposition}\label{prop: tate sphere}
     The following objects in $\mathcal{H}(S)_\bullet$ are equivalent:
 
     1. The projective line $\mathbb{P}^1$;
@@ -1372,75 +1407,49 @@ Combine the universal property in theorem \ref{thm: S-localization universal} an
 
 \subsection{Motivic cohomology}
 
-In classic algebraic topology, Brown representation theorem tell us that there exists a 1-1 corresponding between cohomology theories and spectra. Naumann and Spitzweck proved\cite{Naumann2009BrownRI} that the theorem still holds in motivic world, after giving the axioms which a bigraded cohomology theory should satisfy.
+To denote the topological dimension and the motivic dimension separately, we usually use the bi-graded notation in motivic homotopy theory. This means we could view $S^1$ as $S^{1,0}$ while $\mathbb{G}_m$ as $S^{1,1}$.
 
 \begin{definition}
-    We call a sequnce of functor $(F^{p,q})_{(p,q\in \mathbb{Z}_{\geq 0}^2)}:(Sm/S)^{op}\to \mathcal{E}ns$ is a motivic cohomology if:
+    We denote the sphere $S^{p,q}:= (S^1)^{\wedge p-q} \wedge (\mathbb{G}_m)^{\wedge q}$ for $p\geq q \geq 0$.
+\end{definition}
 
-    1. $F^{p+1,q}(S_s^1\wedge X)= F^{p,q}(X)$;
+As we've shown in \ref{prop: tate sphere}, $\mathbb{P}^1 \simeq S^1 \wedge \mathbb{G}_m$. Thus we could view $\mathbb{P}^1 \simeq S^{2,1}$.
 
-    2. $F^{p,q+1}(S_t^1\wedge X)= F^{p,q}(X)$;
+\begin{definition}
+    Given a motivic spectrum $E\in \mathcal{SH}(S)$, we define its motivic cohomology as the bi-graded family of abelian groups:
 
-    3. $F^{p,q}$ satisfies Nisnevich excision property and $\mathbb{A}^1-$invariant property. 
+    $E^{p,q}(X):= [\Sigma^{\infty}_{S_t^1} X_+, \Sigma^{p,q} E]_{\mathcal{SH}(S)}$ for $X\in Sm/S$;
+
+    $E_{p,q}(X):= [\Sigma^{\infty} S^{p,q}, \Sigma^{\infty}_{S_t^1} X_+ \wedge E]_{\mathcal{SH}(S)}$ for $X\in Sm/S$.
+\end{definition}
+
+\begin{definition}
+    Given a motivic spectrum $E\in \mathcal{SH}(S)$, we define its bi-graded homotopy groups as the family of abelian groups:
+
+    $\pi_{p,q}(E):= [\Sigma^{\infty} S^{p,q}, E]_{\mathcal{SH}(S)}$.
+\end{definition}
+
+\subsection{Algebraic K-theory}
+
+\begin{definition}
+    Given a scheme $S$, we define the algebraic K-theory $K := K' \circ \text{Perf}(-)$, where $\text{Perf}(-)$ is the functor sending a scheme to its stable $\infty$-category of perfect complexes, and $K'$ is the algebraic K-theory functor defined in \ref{def: algebraic K-theory}. Thus we can view algebraic K-theory as a presheaf on $Sm/S$.
 \end{definition}
 
 \begin{theorem}
-    A motivic cohomology is represented by a motivic spectrum $E$ by $F^{p,q}(X):=[X,\Omega_{s,t}^{\infty-(p-2q),\infty-q}E]=[\Sigma_{s,t}^{\infty}X,\Omega_{s,t}^{p-2q,q}E]$, and vice versa.
+    The algebraic K-theory $K$ satisfies Nisnevich descent and is $\mathbb{A}^1$-invariant for regular Noethrian scheme $S$.
 \end{theorem}
 
-We will show some classic examples of motivic spectra together with their corresponding motivic cohomology.
+\begin{proof}[Sketch of proof]
+    Since $K'$ preserve the pullback squares, we only need to show that $\text{Perf}(-)$ satisfies Nisnevich descent. $\mathbb{A}^1$-equivalence follows the statement of algebraic K-theory on rings.
+\end{proof}
 
-\subsection{Motivic Spectra}
+\begin{definition-proposition}
+    There exists an equivalence $K(S) \to \Omega_{\mathbb{P}^1} K(S)$ in $\mathcal{H}(S)$ for regular Noetherian scheme $S$ with finite dimension, thus by the universal property of stable motivic homotopy category, there exists a motivic spectrum $\mathbf{KGL}_S \in \mathcal{SH}(S)$ of the form $(K(S), K(S), \ldots)$.
+\end{definition-proposition}
 
-We firstly see the motivic Eilenberg-MacLane spectrum. The construction below come from \cite{dundas2007motivic}.
-
-\begin{definition}
-    Let $X\in Sm/S$, define $L(X):(Sm/S)^{op}\to Ab$ which maps:
-
-    $U\mapsto F(Irr(U,X))$,
-    
-    where $Irr(U,X)$ is the set of closed irreducible subscheme $Y$ of $U\times X$ such that $p_0:Y\to U$ is of finite type and $im(p_0)$ covers one of the connected compnents of $U$, $F$ is the free abelization functor.
-\end{definition}
-
-\begin{proposition}
-    The functor $U\circ L$ is a Nisnevich sheaf which satisfies $\mathbb{A}^1-$equivalent category, where $U$ is the forgetful functor. Thus $U\circ L\in \mathcal{H}(S)$.
-\end{proposition}
-
-\begin{definition}
-    The Eilenberg-MacLane spectrum $\mathbf{H}\mathbb{Z}^{p,q}:=  L\left((S_s^1)^{\wedge p} \wedge (S_t^1)^{\wedge q}\right)$.
-
-\end{definition}
-
-We don't forget its group structure here because we want to tansfer the cohomology theory.
-
-Just as in classic algebraic topology, Eilenberg-MacLane spectrum represents the ``singular cohomology", that is, the Bloch's higher Chow group.
-
-\begin{proposition}
-    $[X,\mathbf{H}\mathbb{Z}^{p,q}]= CH^q(X,2q-p)$.
-\end{proposition}
-
-The next example we're cared about is the algebaric K-theory spectrum.
-
-\begin{definition}
-    Define $\text{BGL}_n:=\operatorname{colim} (...\to\text{Gr}_n(\mathbb{A}^{n+m})\to \text{Gr}_n(\mathbb{A}^{n+m+1})\to...)$;
-
-    $\text{KGL}_n:= \mathbb{Z}\times \text{BGL}_n$.
-
-    $\text{KGL}:=\operatorname{colim}[...\to\text{KGL}_{n-1}\to \text{KGL}_n\to \text{KGL}_{n+1}\to...]$
-\end{definition}
-
-\begin{proposition}
-    There exists $\beta: \mathbb{P}^1\wedge \text{KGL}\to \text{KGL}$.
-\end{proposition}
-
-\begin{definition}
-    We call the spectrum $(\text{KGL},\text{KGL},...)$ together with $\beta$ on each degree the algebraic K-theory spectrum.
-\end{definition}
-
-\begin{proposition}
-    The algebraic K-theory spectrum represents algebraic K-theory.
-\end{proposition}
-
+\begin{proof}[Sketch of proof]
+    The assumption allows us to consider on ring level. 
+\end{proof}
 
 \subsection{Six functor formalism}
 
@@ -1508,6 +1517,11 @@ Six-Functor Formalisms.
 Christian Heyer and Lucas Mann.
 6-Functor Formalisms and Smooth Representations.
 \textit{arXiv preprint}, 2024.
+
+\bibitem{Hebestreit2021}
+Fabian Hebestreit and Ferdinand Wagner.
+Algebraic and Hermitian K-Theory.
+Lecture notes available at \url{https://sites.google.com/view/fabian-hebestreit/home/lecture-notes}, 2021.
 
 \bibitem{Voevodsky1998}
 Vladimir Voevodsky.
