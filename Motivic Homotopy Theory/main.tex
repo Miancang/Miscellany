@@ -1106,6 +1106,12 @@ Actually there is a equivalence between the $\infty$-category of functor $\mathc
 
 \subsection{Algebraic K-theory}
 
+\subsubsection{Some more higher algebra}
+
+
+
+\subsubsection{Construction of algebraic K-theory}
+
 In topological sense, we could define the topological K-theory on a compact space $X$ as the colimit of the vector bundles on $X$(i.e. the stable equivalence classes of vector bundles on $X$), then by classifying space we could represent the topological K-theory by a spectrum $KU$ called the K-theory spectrum. Similarily, Grothendieck defined the algebraic K-theory $K_0(X)$ of a ring $X$ as the group completion of the monoid of isomorphism classes of finitely generated projective modules over $X$(in 1957, actually before the topological K-theory was defined). Later, Quillen generalized the definition of algebraic K-theory to higher K-theory $K_n(X)$ in the 1970s. From the modern perspective, we could view algebraic K-theory as the $\infty$-group completion of $\text{Vect}(\text{Spec}(R))$.
 
 In general, we could also replace the $\text{Vect}(\text{Spec}(R))$ by any stable $\infty$-category. Thus we can define the algebraic K-theory as a functor $K: \text{Cat}_{\infty}^{st} \rightarrow \operatorname{CGrp}(\mathcal{S})$.
@@ -1429,28 +1435,6 @@ As we've shown in \ref{prop: tate sphere}, $\mathbb{P}^1 \simeq S^1 \wedge \math
     $\pi_{p,q}(E):= [\Sigma^{\infty} S^{p,q}, E]_{\mathcal{SH}(S)}$.
 \end{definition}
 
-\subsection{Algebraic K-theory}
-
-\begin{definition}
-    Given a scheme $S$, we define the algebraic K-theory $K := K' \circ \text{Perf}(-)$, where $\text{Perf}(-)$ is the functor sending a scheme to its stable $\infty$-category of perfect complexes, and $K'$ is the algebraic K-theory functor defined in \ref{def: algebraic K-theory}. Thus we can view algebraic K-theory as a presheaf on $Sm/S$.
-\end{definition}
-
-\begin{theorem}
-    The algebraic K-theory $K$ satisfies Nisnevich descent and is $\mathbb{A}^1$-invariant for regular Noethrian scheme $S$.
-\end{theorem}
-
-\begin{proof}[Sketch of proof]
-    Since $K'$ preserve the pullback squares, we only need to show that $\text{Perf}(-)$ satisfies Nisnevich descent. $\mathbb{A}^1$-equivalence follows the statement of algebraic K-theory on rings.
-\end{proof}
-
-\begin{definition-proposition}
-    There exists an equivalence $K(S) \to \Omega_{\mathbb{P}^1} K(S)$ in $\mathcal{H}(S)$ for regular Noetherian scheme $S$ with finite dimension, thus by the universal property of stable motivic homotopy category, there exists a motivic spectrum $\mathbf{KGL}_S \in \mathcal{SH}(S)$ of the form $(K(S), K(S), \ldots)$.
-\end{definition-proposition}
-
-\begin{proof}[Sketch of proof]
-    The assumption allows us to consider on ring level. 
-\end{proof}
-
 \subsection{Six functor formalism}
 
 It was Ayoub who first found the six functor formalism structure on stable motivic homotopy category in 2007. In 2020, Drew and Gallauer proved that such six functor formalism is universal among all six functor formalisms on schemes satisfying certain conditions. Thus, we give another explanation of the universal property of stable motivic homotopy category.
@@ -1481,6 +1465,28 @@ For the universal property, here we introduce the version of Scholze who improve
 
     Then this $\infty$-category has an initial object given by the stable motivic homotopy theory $\mathcal{SH}(k)$.
 \end{theorem}
+
+\subsection{Algebraic K-theory}
+
+\begin{definition}
+    Given a scheme $S$, we define the algebraic K-theory $K := K' \circ \text{Perf}(-)$, where $\text{Perf}(-)$ is the functor sending a scheme to its stable $\infty$-category of perfect complexes, and $K'$ is the algebraic K-theory functor defined in \ref{def: algebraic K-theory}. Thus we can view algebraic K-theory as a presheaf on $Sm/S$.
+\end{definition}
+
+\begin{theorem}
+    The algebraic K-theory $K$ satisfies Nisnevich descent and is $\mathbb{A}^1$-invariant for regular Noethrian scheme $S$.
+\end{theorem}
+
+\begin{proof}[Sketch of proof]
+    Since $K'$ preserve the pullback squares, we only need to show that $\text{Perf}(-)$ satisfies Nisnevich descent. $\mathbb{A}^1$-equivalence follows the statement of algebraic K-theory on rings.
+\end{proof}
+
+\begin{definition-proposition}
+    There exists an equivalence $K(S) \to \Omega_{\mathbb{P}^1} K(S)$ in $\mathcal{H}(S)$ for regular Noetherian scheme $S$ with finite dimension, thus by the universal property of stable motivic homotopy category, there exists a motivic spectrum $\mathbf{KGL}_S \in \mathcal{SH}(S)$ of the form $(K(S), K(S), \ldots)$.
+\end{definition-proposition}
+
+\begin{proof}[Sketch of proof]
+    The assumption allows us to consider on ring level. 
+\end{proof}
 
 \begin{thebibliography}{99}
 \bibitem{htt}
