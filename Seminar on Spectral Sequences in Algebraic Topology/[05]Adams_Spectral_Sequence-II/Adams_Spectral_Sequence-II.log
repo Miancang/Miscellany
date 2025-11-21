@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.3)  20 NOV 2025 21:27
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.3)  20 NOV 2025 21:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -454,7 +454,8 @@ File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
 \g__graphics_track_int=\count328
 \g__pdfannot_backend_int=\count329
 \g__pdfannot_backend_link_int=\count330
-) (./Adams_Spectral_Sequence-II.aux)
+)
+No file Adams_Spectral_Sequence-II.aux.
 \openout1 = `Adams_Spectral_Sequence-II.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -478,7 +479,7 @@ LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
- (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
@@ -486,19 +487,25 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Package hyperref Info: Link coloring ON on input line 28.
- (./Adams_Spectral_Sequence-II.out) (./Adams_Spectral_Sequence-II.out)
 \@outlinefile=\write4
 \openout4 = `Adams_Spectral_Sequence-II.out'.
 
 
 
-LaTeX Warning: Empty `thebibliography' environment on input line 79.
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
-[1] (./Adams_Spectral_Sequence-II.aux)
+[1]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 118.
+
+[2] (./Adams_Spectral_Sequence-II.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package rerunfilecheck Warning: File `Adams_Spectral_Sequence-II.out' has changed.
@@ -506,7 +513,7 @@ Package rerunfilecheck Warning: File `Adams_Spectral_Sequence-II.out' has change
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `Adams_Spectral_Sequence-II.out':
-(rerunfilecheck)             Before: DD505D5C7FAD1C77315CA9C787E01A41;345
+(rerunfilecheck)             Before: <no file>
 (rerunfilecheck)             After:  093D5D1B813C674D9E58BE8B5F6DB977;1607.
  )
 (\end occurred inside a group at level 1)
@@ -514,12 +521,12 @@ Package rerunfilecheck Info: Checksums for `Adams_Spectral_Sequence-II.out':
 ### simple group (level 1) entered at line 31 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 21095 strings out of 468219
- 398098 string characters out of 5437898
- 784571 words of memory out of 5000000
- 49283 multiletter control sequences out of 15000+600000
+ 21087 strings out of 468219
+ 397871 string characters out of 5437898
+ 789040 words of memory out of 5000000
+ 49281 multiletter control sequences out of 15000+600000
  634473 words of font info for 73 fonts, out of 8000000 for 9000
  1509 hyphenation exceptions out of 8191
- 98i,12n,108p,611b,477s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,12n,108p,611b,480s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Adams_Spectral_Sequence-II.pdf (1 page).
+Output written on Adams_Spectral_Sequence-II.pdf (2 pages).
