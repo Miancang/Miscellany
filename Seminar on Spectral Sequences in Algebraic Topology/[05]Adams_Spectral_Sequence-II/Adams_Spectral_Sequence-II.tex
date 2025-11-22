@@ -58,9 +58,15 @@ We can define a \textbf{spectrum} $E$ as the following two equivalent ways:
 \end{itemize}
 \end{definition}
 
+\begin{definition}[Generalized Cohomology]
+\end{definition}
+
 \begin{theorem}[Brown Representability Theorem]
-    For any reduced     
+    For any reduced 
 \end{theorem}
+
+\begin{definition}[Generalized (Co)homology Theory]
+\end{definition}
 
 \begin{theorem}[Symmetric Monoidal Structure on Spectra]
 
@@ -80,26 +86,43 @@ We can define a \textbf{spectrum} $E$ as the following two equivalent ways:
 \begin{definition}[Eilenberg-MacLane Spectrum]
 \end{definition}
 
+\begin{theorem}[Representability of Singular Cohomology]
+\end{theorem}
+
 \begin{theorem}[Ring Structure on Eilenberg-MacLane Spectrum]
 \end{theorem}
 
 \subsection{Cohomology Operations and Stable Cohomology Operations}
 
 \begin{definition}[Cohomology Operation]
+    A \textbf{cohomology operation} of type $(n, G) \to (m, G')$ is a natural transformation between two cohomology functors, i.e. a collection of maps
+    \[\{\theta_X: H^n(X; G) \to H^m(X; G')\}_{X \in \text{Top}_*}\]
+    such that for any pointed map $f: X \to Y$, the following diagram commutes:
+    \[\begin{tikzcd}
+    H^n(Y; G) \arrow{r}{\theta_Y} \arrow{d}{f^*} & H^m(Y; G') \arrow{d}{f^*} \\
+    H^n(X; G) \arrow{r}{\theta_X} & H^m(X; G')
+    \end{tikzcd}\]
 \end{definition}
+
+Notice that by the representability of singular cohomology, $H^n(-; G) $ as a functor is represented by $ [-, K(G,n)]$, thus a cohomology operation $\theta$ of type $(n, G) \to (m, G')$ corresponds to a natural transformation of functors \[[-, K(G,n)] \to [-, K(G',m)]\], thus by Yoneda lemma(in the homotopy category of pointed spaces), it corresponds to $H^m(K(G,n); G')$.
 
 \begin{definition}[Stable Cohomology Operation]
+    A \textbf{stable cohomology operation} of degree $k$ from $G$ to $G'$ is a collection of cohomology operations
+    \[\{\theta^n: H^n(-; G) \to H^{n+k}(-; G')\}_{n \in \mathbb{Z}}\]
+    such that for any pointed space $X$, the following diagram commutes:
+    \[\begin{tikzcd}
+    H^n(X; G) \arrow{r}{\theta^n_X} \arrow{d}{\Sigma} & H^{n+k}(X; G') \arrow{d}{\Sigma} \\
+    H^{n+1}(\Sigma X; G) \arrow{r}{\theta^{n+1}_{\Sigma X}} & H^{n+k+1}(\Sigma X; G')
+    \end{tikzcd}\]
 \end{definition}
 
-Yoneda + Brown representability theorem.
-
-
+Notice a cohomology operation $theta
 \section{Hopf Algebra}
 
 \begin{definition}[Algebra and Coalgebra over a Monoidal Category]
 \end{definition}
 
-\begin{definition}{Bialgebra}
+\begin{definition}[Bialgebra]
 \end{definition}
 
 \begin{example}[k-module]
@@ -108,6 +131,9 @@ Yoneda + Brown representability theorem.
 \begin{definition}[Hopf Algebra]
 \end{definition}
 \section{Steenrod Algebra}
+
+\begin{definition}[Steenrod Squares]
+\end{definition}
 
 \section{E-Adams Spectral Sequence}
 
