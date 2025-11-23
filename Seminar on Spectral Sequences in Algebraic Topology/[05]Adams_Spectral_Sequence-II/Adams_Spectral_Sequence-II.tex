@@ -58,15 +58,48 @@ We can define a \textbf{spectrum} $E$ as the following two equivalent ways:
 \end{itemize}
 \end{definition}
 
-\begin{definition}[Generalized Cohomology]
+\begin{definition}[Generalized Cohomology \& Homology Theory]
+    We call a functor $h^*: h \mathcal{S}_*^{op} \to \text{Ab}^\mathbb{Z}$ a \textbf{generalized cohomology theory} if it satisfies:
+
+    1. Suspension Axiom: For any space $X$, there is a natural isomorphism $h^*(X) \cong h^{*+1}(\Sigma X)$.
+
+    2. Exactness Axiom: For any cofiber sequence $X \to Y \to Z$, the induced sequence
+    \[\cdots \to h^*(Z) \to h^*(Y) \to h^*(X) \to \cdots\]
+    is exact.
+
+    3. Wedge Axiom: For any family of spaces $\{X_\alpha\}_{\alpha \in A}$, the natural map
+    \[h^*\left(\bigvee_{\alpha \in A} X_\alpha\right) \to \prod_{\alpha \in A} h^*(X_\alpha)\]
+    is an isomorphism.
+
+    We call a functor $h_*: h \mathcal{S}_* \to \text{Ab}^\mathbb{Z}$ a \textbf{generalized homology theory} if it satisfies:
+
+    1. Suspension Axiom: For any space $X$, there is a natural isomorphism $h_*(X) \cong h_{*+1}(\Sigma X)$.
+
+    2. Exactness Axiom: For any cofiber sequence $X \to Y \to Z$, the induced sequence
+    \[\cdots \to h_*(X) \to h_*(Y) \to h_*(Z) \to \cdots\]
+    is exact.
+
+    3. Wedge Axiom: For any family of spaces $\{X_\alpha\}_{\alpha \in A}$, the natural map
+    \[h_*\left(\bigvee_{\alpha \in A} X_\alpha\right) \to \bigoplus_{\alpha \in A} h_*(X_\alpha)\]
+    is an isomorphism.
+
 \end{definition}
 
 \begin{theorem}[Brown Representability Theorem]
-    For any reduced 
+    Any generalized cohomology theory $h^*$ is representable, i.e. there exists a spectrum $E$ such that for any pointed space $X$, there is a natural isomorphism
+    \[h^n(X) \cong [X, E_n].\]
+
+    Any generalized homology theory $h_*$ is representable, i.e. there exists a spectrum $E$ such that for any pointed space $X$, there is a natural isomorphism
+    \[h_n(X) \cong \varinjlim_k [S^k, X \wedge E_{n+k}].\]
 \end{theorem}
 
-\begin{definition}[Generalized (Co)homology Theory]
-\end{definition}
+\begin{remark}
+    A more natural way to present looks like:
+
+    \[ h^n(X) \cong \pi_{-n}\text{Maps}(\Sigma^\infty X, E) \]
+
+    \[ h_n(X) \cong \pi_n \text{Maps}(\Sigma^\infty X \wedge E) \]
+\end{remark}
 
 \begin{theorem}[Symmetric Monoidal Structure on Spectra]
 
@@ -116,7 +149,6 @@ Notice that by the representability of singular cohomology, $H^n(-; G) $ as a fu
     \end{tikzcd}\]
 \end{definition}
 
-Notice a cohomology operation $theta
 \section{Hopf Algebra}
 
 \begin{definition}[Algebra and Coalgebra over a Monoidal Category]
