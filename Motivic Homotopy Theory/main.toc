@@ -11,30 +11,30 @@
 \contentsline {subsection}{\numberline {2.6}Adjoint functors}{11}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Presentable categories}{11}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}Stable categories}{12}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}$(\infty ,1)-$Operads and symmetric monoidal categories}{13}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.9}Symmetric monoidal categories and operads}{13}{subsection.2.9}%
 \contentsline {section}{\numberline {3}Preliminaries}{14}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Higher topos theory}{14}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Localization}{14}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}S-Localization}{15}{subsubsection.3.1.2}%
 \contentsline {subsubsection}{\numberline {3.1.3}Properties of presentable categories}{16}{subsubsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.2}Stable Homotopy Theory}{16}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Stabilization and Spectra}{16}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2}Stable Homotopy Theory}{17}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Stabilization and Spectra}{17}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Symmetric monoidal structure and universal property of spectra}{17}{subsubsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.3}Six functor formalism}{17}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Six functor formalism}{18}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Definition of six functor formalism}{18}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Construction of six functor formalism}{19}{subsubsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}Algebraic K-theory}{20}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Some more higher algebra}{20}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Construction of algebraic K-theory}{20}{subsubsection.3.4.2}%
-\contentsline {section}{\numberline {4}Unstable Motivic Homotopy Theory}{21}{section.4}%
+\contentsline {subsubsection}{\numberline {3.3.2}Construction of six functor formalism}{20}{subsubsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}Algebraic K-theory}{21}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Some more higher algebra}{21}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Construction of algebraic K-theory}{21}{subsubsection.3.4.2}%
+\contentsline {section}{\numberline {4}Unstable Motivic Homotopy Theory}{22}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Nisnevich topology}{22}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Excision property}{22}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Excision property}{23}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}$\mathbb {A}^1$-equivalent}{23}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Unstable motivic homotopy category}{23}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Symmetric monoidal structure on $\mathcal {H}(S)_\bullet $}{24}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.4}Unstable motivic homotopy category}{24}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Symmetric monoidal structure on $\mathcal {H}(S)_\bullet $}{25}{subsection.4.5}%
 \contentsline {section}{\numberline {5}Stable Motivic Homotopy Theory}{25}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Robalo's Stabilization}{25}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Stable motivic homotopy category}{26}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Motivic cohomology}{26}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.3}Motivic cohomology}{27}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Six functor formalism}{27}{subsection.5.4}%
 \contentsline {subsection}{\numberline {5.5}Algebraic K-theory}{28}{subsection.5.5}%
