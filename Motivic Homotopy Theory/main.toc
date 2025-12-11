@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {2.6}Adjoint functors}{11}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Presentable categories}{11}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}Stable categories}{12}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Symmetric monoidal categories and operads}{13}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.9}Operads and symmetric monoidal categories}{13}{subsection.2.9}%
 \contentsline {section}{\numberline {3}Preliminaries}{14}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Higher topos theory}{14}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Localization}{14}{subsubsection.3.1.1}%
